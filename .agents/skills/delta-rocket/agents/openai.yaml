@@ -1,0 +1,4 @@
+interface:
+  display_name: "Delta Rocket"
+  short_description: "Build by modules with clear decisions and bounded reviews"
+  default_prompt: "Use $delta-rocket to design and build this feature with clear decisions, simple code, and module reviews."
