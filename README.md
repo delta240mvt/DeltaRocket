@@ -1,4 +1,4 @@
-<h1 align="center">Delta Rocket</h1>
+<h1 align="center">DeltaRocket</h1>
 
 <div align="center">
 
@@ -53,13 +53,13 @@
 
 **One main builder · Simple, readable code · Concise communication**
 
-[Quick start](#quick-start) · [Why Delta Rocket](#why-delta-rocket) · [Workflow](#workflow) · [Review policy](#review-policy) · [Documentation](#documentation)
+[Quick start](#quick-start) · [Why DeltaRocket](#why-deltarocket) · [Workflow](#workflow) · [Review policy](#review-policy) · [Documentation](#documentation)
 
 </div>
 
 ---
 
-Delta Rocket is a software development skill for Codex. It brings together
+DeltaRocket is a software development skill for Codex. It brings together
 Superpowers' development discipline, Ponytail's preference for simple solutions,
 and Caveman's concise communication in one coordinated workflow.
 
@@ -67,20 +67,20 @@ The main agent carries a project from design decisions through implementation.
 It builds complete functional modules, brings in reviewers at defined checkpoints,
 and records decisions and review counts so work can resume coherently.
 
-## Why Delta Rocket
+## Why DeltaRocket
 
-**Choose Delta Rocket when you want a capable main agent to build substantial
+**Choose DeltaRocket when you want a capable main agent to build substantial
 features with a clear process and predictable review boundaries.** Its advantage
 is how the methods work together: requirements guide simplification, module
 boundaries guide reviews, and concise updates report verified progress.
 
-| Compared with | Delta Rocket's advantage for this workflow | Practical result |
+| Compared with | DeltaRocket's advantage for this workflow | Practical result |
 | --- | --- | --- |
 | Superpowers | Main-agent implementation, stable module boundaries and a tighter review budget. | Fewer implementation handoffs and less opportunity for repeated task-level review cycles. |
 | Ponytail | A complete design-to-verification process around the simplicity principles. | Minimal code remains tied to agreed behavior, integration contracts and acceptance criteria. |
 | Caveman | Control over work structure as well as communication. | The agent addresses review and context overhead alongside verbose narration. |
 
-These are differences in workflow design. Delta Rocket has not demonstrated
+These are differences in workflow design. DeltaRocket has not demonstrated
 lower total token use, faster delivery or higher code quality in a comparative
 benchmark. The comparisons below refer to the specific upstream snapshots in
 [SOURCES.md](.agents/skills/delta-rocket/SOURCES.md), reviewed on September 13, 2026.
@@ -89,12 +89,12 @@ They compare the relevant skills, not every feature in those projects.
 ### Compared with Superpowers: continuity and tighter review boundaries
 
 Superpowers provides the foundation: clarify the goal, agree on a design, plan,
-implement, review and verify. Delta Rocket retains adapted methods for debugging,
+implement, review and verify. DeltaRocket retains adapted methods for debugging,
 TDD, evaluating feedback and checking completion.
 
 Its main changes are in execution:
 
-| Decision | Referenced Superpowers workflow | Delta Rocket |
+| Decision | Referenced Superpowers workflow | DeltaRocket |
 | --- | --- | --- |
 | Implementation owner | Subagent-driven development assigns a fresh implementer to each plan task. | The main agent implements and fixes all modules. |
 | Review unit | A plan task, whose size depends on decomposition. | A large functional module with a stable ID; internal checklist steps do not trigger reviews. |
@@ -112,16 +112,16 @@ bounce between fresh implementers and reviewers. The intended benefit is lower
 coordination overhead while retaining explicit quality checkpoints.
 
 For example, catalog, checkout and receipts can be three modules containing
-18 small steps. Delta Rocket schedules **three module reviews plus two
+18 small steps. DeltaRocket schedules **three module reviews plus two
 final reviews**. The steps do not become 18 review units. Plan and spec reviews
 add two separate document assessments. Superpowers can also group work into
 three tasks; its current task-sizing guidance does not require reviewing every
-checklist step. The difference is Delta Rocket's explicit module contract and
+checklist step. The difference is DeltaRocket's explicit module contract and
 smaller correction budget.
 
 **Tradeoff:** fresh implementers can isolate context and bring a different
 perspective. Superpowers is a better fit when that execution model is desired.
-Delta Rocket's main agent carries more context, and its mandatory second final
+DeltaRocket's main agent carries more context, and its mandatory second final
 review can mean more reviews on an otherwise clean run. Neither workflow is
 universally cheaper.
 
@@ -133,7 +133,7 @@ and write only what is needed. It also explicitly protects required validation,
 security, accessibility and user requirements, and calls for runnable checks
 of non-trivial logic. [Ponytail skill](https://github.com/dietrichgebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail/SKILL.md).
 
-Delta Rocket adds the structure needed to carry that judgment through a project:
+DeltaRocket adds the structure needed to carry that judgment through a project:
 
 - **Decisions before dependent code.** Socratic gates resolve material questions
   about scope and behavior. The agent reuses existing answers and handles routine
@@ -145,12 +145,12 @@ Delta Rocket adds the structure needed to carry that judgment through a project:
   completion evidence are part of the same workflow as implementation.
 - **Continuity across sessions.** A work record preserves decisions, progress,
   findings and consumed review rounds.
-- **Readable implementation without a persona.** Delta Rocket keeps the reuse
+- **Readable implementation without a persona.** DeltaRocket keeps the reuse
   principles while omitting intensity modes and one-line code targets.
 
 **Why this can be better:** on a feature spanning import, validation and storage,
 reducing each component independently is not enough. Their contracts must agree.
-Delta Rocket makes that integration an explicit responsibility and checks the
+DeltaRocket makes that integration an explicit responsibility and checks the
 finished behavior against the original goal.
 
 The advantage is the surrounding delivery process; it is not a claim that
@@ -162,10 +162,10 @@ change inside an established workflow, Ponytail alone may require less ceremony.
 Caveman focuses on compressed communication. Its skill already preserves technical
 meaning, keeps code blocks intact and calls for normal prose in saved artifacts.
 Its lighter mode also preserves ordinary grammar. Those protections are shared
-principles, not inventions of Delta Rocket.
+principles, not inventions of DeltaRocket.
 [Caveman skill](https://github.com/juliusbrussee/caveman/blob/15581d14007fd01fb3f132016741962f34936ca2/skills/caveman/SKILL.md).
 
-Delta Rocket extends the efficiency goal to the work itself:
+DeltaRocket extends the efficiency goal to the work itself:
 
 - **Review scheduling:** stable module boundaries and finite rounds constrain
   how often another assessment is requested.
@@ -179,16 +179,16 @@ Delta Rocket extends the efficiency goal to the work itself:
   intelligible; code, comments and documentation remain complete.
 
 **Why this can be better:** a short final answer does not remove the work and
-context involved in repeated agent dispatches. Delta Rocket addresses those
+context involved in repeated agent dispatches. DeltaRocket addresses those
 sources of overhead alongside the amount of text shown in chat.
 
 This comparison concerns the Caveman communication skill, not its separate
 engine or proxy components. If all you need is shorter replies in an existing
-workflow, Caveman is the more focused tool. Delta Rocket does not claim to
+workflow, Caveman is the more focused tool. DeltaRocket does not claim to
 compress replies more aggressively, control Codex's tool cards or achieve
 Caveman's advertised token savings.
 
-## What Delta Rocket includes
+## What DeltaRocket includes
 
 | Capability | What it does |
 | --- | --- |
@@ -295,6 +295,36 @@ Copy the entire [`delta-rocket`](.agents/skills/delta-rocket) directory into tha
 project's `.agents/skills/` folder. Keep the references, methods and notices.
 Invoke it the same way. Installing Superpowers, Ponytail or Caveman is not required.
 
+### Install globally with automatic routing
+
+With Python 3 available as `python`, run from this repository:
+
+```bash
+python scripts/install-codex.py
+```
+
+The installer copies the skill and the [DeltaRocket hook](hooks/delta-rocket.py)
+to `CODEX_HOME` (default: `~/.codex`) and merges two entries into `hooks.json`.
+It backs up an existing hook configuration and preserves other hooks. Running
+it again updates DeltaRocket without adding duplicate entries. It does not
+disable other workflows or modify hook trust.
+
+Restart Codex, open `/hooks`, and review and trust the two DeltaRocket entries.
+[Codex requires explicit trust for user hooks](https://learn.chatgpt.com/docs/hooks).
+An enabled entry awaiting trust will not run.
+
+- `SessionStart` loads the entrypoint on startup, resume, clear and compaction.
+- `UserPromptSubmit` adds a short routing reminder for each user message.
+- The model chooses a quick change, the full workflow, or a direct response for
+  questions and standalone reviews. An explicit choice of another workflow wins.
+- Subagents receive no automatic hook, so reviewers do not restart the workflow.
+
+The hook only emits context; it does not execute the prompt, call a model, or
+enforce the model's decision. Supporting references are loaded on demand.
+
+The display name is **DeltaRocket**. The compatible technical skill identifier,
+directory name and explicit invocation remain `delta-rocket` / `$delta-rocket`.
+
 ## Project layout
 
 ```text
@@ -309,6 +339,8 @@ docs/
   design/                   Skill plan and specification
   research/                 Source analysis
   testing/                  Scenarios and validation results
+hooks/delta-rocket.py        Session and prompt routing context
+scripts/install-codex.py     Global skill and hook installation
 ```
 
 ## Validation and scope
@@ -331,9 +363,11 @@ model, task, repository and verification criteria constant, then measure the
 whole run, including subagents and rework. Shorter visible replies alone are
 not evidence of lower total cost.
 
-Delta Rocket supplies behavioral instructions, not a runtime that technically
+DeltaRocket supplies behavioral instructions, not a runtime that technically
 enforces limits. It uses the model and tools available in the host. Existing
-skills and configuration remain unchanged; host instructions still apply.
+skills remain unchanged; the optional installer adds user hooks as described
+above. Host instructions still apply. Historical documents and trial artifacts
+use the current DeltaRocket spelling; this naming update does not rerun those trials.
 
 ## Documentation
 
@@ -351,7 +385,7 @@ are in English.
 
 ## Credits and provenance
 
-Delta Rocket builds on [Superpowers](https://github.com/obra/superpowers),
+DeltaRocket builds on [Superpowers](https://github.com/obra/superpowers),
 [Ponytail](https://github.com/dietrichgebert/ponytail) and
 [Caveman](https://github.com/juliusbrussee/caveman). Their ideas and methods
 are adapted to one main builder, functional modules and bounded reviews.
@@ -363,4 +397,4 @@ Upstream license notices are preserved in
 
 ---
 
-<div align="center"><strong>DELTA ROCKET · BY DELTA240MVT</strong><br><em>Think. Build. Verify.</em></div>
+<div align="center"><strong>DeltaRocket · BY DELTA240MVT</strong><br><em>Think. Build. Verify.</em></div>

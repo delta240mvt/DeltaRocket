@@ -1,11 +1,11 @@
-# Niezależna próba Delta Rocket — Quick change
+# Niezależna próba DeltaRocket — Quick change
 
 ## Warunki próby
 
 Próbę wykonano w nowym katalogu tymczasowym poza repozytorium:
 C:\Users\delta\AppData\Local\Temp\delta-rocket-v02-quick-663d7984cee846adb2445a54d1a5a9b1
 
-Odtworzona prośba: „Użyj $delta-rocket. Popraw wyłącznie literówkę w tytule UI z Delat Rocket na Delta Rocket. Zakres i docelowy tekst są zatwierdzone. Zrób to od razu i zweryfikuj JSON”.
+Odtworzona prośba: „Użyj $delta-rocket. Popraw wyłącznie literówkę w tytule UI z Delat Rocket na DeltaRocket. Zakres i docelowy tekst są zatwierdzone. Zrób to od razu i zweryfikuj JSON”.
 
 ## Odczytane pliki skilla
 
@@ -24,7 +24,7 @@ Przed:
 
 Po:
 ```json
-{"ui":{"title":"Delta Rocket","theme":"dark"}}
+{"ui":{"title":"DeltaRocket","theme":"dark"}}
 ```
 
 ## Review, pytania i artefakty
@@ -34,13 +34,13 @@ Po:
 - Pytania do użytkownika i prośby o dodatkowe zatwierdzenie: 0.
 - Artefakty procesu skilla: 0. Nie utworzono plan.md, spec.md, state.md ani notatek zastępujących te artefakty.
 - Wynik zadania: settings.json.
-- Artefakt testera: tester-report.md, czyli niniejszy raport. Powstał na zlecenie testera, po wykonaniu poprawki; nie jest artefaktem procesu Delta Rocket.
+- Artefakt testera: tester-report.md, czyli niniejszy raport. Powstał na zlecenie testera, po wykonaniu poprawki; nie jest artefaktem procesu DeltaRocket.
 
 ## Kontrole i wynik
 
 1. Przed edycją porównano treść fixture z dokładnym wymaganym wejściem — PASS.
 2. Po zapisaniu ponownie odczytano settings.json i sparsowano przez ConvertFrom-Json -ErrorAction Stop — PASS.
-3. Sprawdzono ui.title == "Delta Rocket" z uwzględnieniem wielkości liter — PASS.
+3. Sprawdzono ui.title == "DeltaRocket" z uwzględnieniem wielkości liter — PASS.
 4. Sprawdzono ui.theme == "dark" — PASS.
 5. Porównano cały plik z dokładnym oczekiwanym JSON, potwierdzając brak innych zmian — PASS.
 

@@ -1,20 +1,20 @@
-# Delta Rocket
+# DeltaRocket
 
 ## 1. Rekomendacja
 
-Delta Rocket powinien być **samodzielnym skillem z małym plikiem głównym i kilkoma referencjami ładowanymi na żądanie**. Superpowers pozostaje inspiracją procesu: zrozumienie celu, projekt, plan, implementacja, weryfikacja i zakończenie. Wykonanie należy jednak opisać od nowa: główny agent buduje spójne moduły, a jeden reviewer ocenia cały zaakceptowany zakres w najwyżej dwóch rundach.
+DeltaRocket powinien być **samodzielnym skillem z małym plikiem głównym i kilkoma referencjami ładowanymi na żądanie**. Superpowers pozostaje inspiracją procesu: zrozumienie celu, projekt, plan, implementacja, weryfikacja i zakończenie. Wykonanie należy jednak opisać od nowa: główny agent buduje spójne moduły, a jeden reviewer ocenia cały zaakceptowany zakres w najwyżej dwóch rundach.
 
-Ponytail wnosi zasadę ograniczania potrzebnego kodu, Caveman — ograniczania narracji. Nie należy ładować trzech pełnych systemów instrukcji jednocześnie. Taka kompozycja zachowałaby ich konflikty, koszty kontekstu i niepożądane mechanizmy aktywacji. Delta Rocket powinien przejąć wybrane reguły, z własnymi kryteriami wykonania i zakończenia.
+Ponytail wnosi zasadę ograniczania potrzebnego kodu, Caveman — ograniczania narracji. Nie należy ładować trzech pełnych systemów instrukcji jednocześnie. Taka kompozycja zachowałaby ich konflikty, koszty kontekstu i niepożądane mechanizmy aktywacji. DeltaRocket powinien przejąć wybrane reguły, z własnymi kryteriami wykonania i zakończenia.
 
 **Najważniejsze ustalenia:**
 
 - Aktualny Superpowers częściowo rozwiązał problem nadmiaru review: używa wspólnego review zgodności i jakości oraz zawęża ponowne przeglądy. Nadal jednak przewiduje do pięciu rund naprawczych **na zadanie**, oprócz przeglądu końcowego.[^1]
 - `executing-plans` nie gwarantuje pracy głównego agenta: nakazuje przejście do `subagent-driven-development`, jeżeli subagenci są dostępni. To bezpośrednio koliduje z preferowanym wykonaniem inline.[^2]
 - Oficjalne zalecenia dla Astry wspierają zmniejszanie nadmiernie szczegółowych instrukcji, wąskie opisy aktywacji i ładowanie dokumentów zależnie od potrzeby.[^3]
-- Skrócenie tekstu w czacie nie jest pomiarem oszczędności całej sesji. Dla Delta Rocket potrzebny jest benchmark uwzględniający kontekst i wszystkich agentów.
+- Skrócenie tekstu w czacie nie jest pomiarem oszczędności całej sesji. Dla DeltaRocket potrzebny jest benchmark uwzględniający kontekst i wszystkich agentów.
 - Limit dwóch rund jest wykonalny jako reguła procesu. **Skill instrukcyjny nie stanowi deterministycznego mechanizmu egzekwowania limitu.** Nie znaleziono ustawienia Codexa oznaczającego „maksymalnie dwa review dla tego zakresu”.
 
-Rekomendacja dotyczy projektu v0.1. Nie jest wynikiem benchmarku gotowego Delta Rocket; taki skill jeszcze nie został zaimplementowany.
+Rekomendacja dotyczy projektu v0.1. Nie jest wynikiem benchmarku gotowego DeltaRocket; taki skill jeszcze nie został zaimplementowany.
 
 ## 2. Zakres i podstawa źródłowa
 
@@ -31,7 +31,7 @@ Analiza repozytoriów została przypięta do konkretnych commitów. Data commita
 
 Lokalne `codex --version` zwróciło `codex-cli 0.145.0`. Porównanie SHA-256 czterech lokalnych plików Superpowers — `brainstorming`, `writing-plans`, `executing-plans`, `subagent-driven-development` — wykazało identyczność z powyższym snapshotem upstream. To obserwacja tej instalacji, nie twierdzenie o wersjach wszystkich pluginów. Wersja CLI znaleziona w PATH nie dowodzi wersji backendu aplikacji desktop.
 
-W raporcie „potwierdzone” oznacza informację z odczytanej dokumentacji, kodu lub wskazanej obserwacji lokalnej. „Rekomendacja” oznacza decyzję projektową proponowaną dla Delta Rocket. Deklaracje benchmarków autorów nie są traktowane jako niezależna walidacja skuteczności.
+W raporcie „potwierdzone” oznacza informację z odczytanej dokumentacji, kodu lub wskazanej obserwacji lokalnej. „Rekomendacja” oznacza decyzję projektową proponowaną dla DeltaRocket. Deklaracje benchmarków autorów nie są traktowane jako niezależna walidacja skuteczności.
 
 ## 3. Codex i GPT-6 Astra
 
@@ -41,7 +41,7 @@ Oficjalna nazwa to **GPT-6 Astra**, identyfikator API: `gpt-6-astra`. Karta API 
 
 W Codexie dostępność modeli i poziomów zależy od konta, klienta oraz wdrożenia funkcji. Dokumentacja produktu opisuje Astrę i wybór modelu w interfejsie; CLI umożliwia `--model` i `/model`. Dokumentacja subagentów nadal zawiera przykłady i rekomendacje dla GPT-5.6, co nie oznacza braku Astry. Interfejsy produktowe mogą też eksponować `ultra`, którego nie wymienia karta API Astry.[^5]
 
-**Konsekwencja:** Delta Rocket zachowuje wybrany przez użytkownika model i effort. Nie przełącza automatycznie na model „najnowszy”, najtańszy ani na Ultra. Obsługiwane kombinacje ustala z bieżącego klienta i schematu narzędzia. W pierwszym benchmarku wszystkie warianty powinny używać tej samej Astry i tego samego effort; routing tańszych reviewerów jest osobnym eksperymentem.
+**Konsekwencja:** DeltaRocket zachowuje wybrany przez użytkownika model i effort. Nie przełącza automatycznie na model „najnowszy”, najtańszy ani na Ultra. Obsługiwane kombinacje ustala z bieżącego klienta i schematu narzędzia. W pierwszym benchmarku wszystkie warianty powinny używać tej samej Astry i tego samego effort; routing tańszych reviewerów jest osobnym eksperymentem.
 
 Zalecenia OpenAI dla Astry wskazują na potrzebę wyraźnego określania autonomii, końca zadania, pożądanej zwięzłości, warunków delegowania oraz adekwatnego zakresu testów. Nie należy z tego wyprowadzać obowiązku maksymalnej delegacji. Przykłady promptów są narzędziem dostrajania zachowania, a nie uniwersalną receptą procesu.[^6]
 
@@ -57,9 +57,9 @@ Codex najpierw otrzymuje katalog nazw i opisów, a pełny skill ładuje po wybor
 
 Codex buduje instrukcje `AGENTS.md` od poziomu globalnego do katalogu roboczego. `AGENTS.override.md` ma pierwszeństwo nad zwykłym plikiem na tym samym poziomie. Domyślny łączny limit dokumentów projektowych to 32 KiB. Zmiana pliku w trakcie sesji nie powinna być traktowana jako pewność przebudowania całego łańcucha instrukcji; dokumentacja zaleca nową sesję przy problemach z aktualnością.[^9]
 
-Lokalne reguły i skille nie mogą uchylać instrukcji wyższej rangi ani nadawać uprawnień narzędziom. W tej instalacji instrukcje użytkownika mają pierwszeństwo przed wskazówkami skillów, lecz szczegóły dostarczenia instrukcji są zależne od hosta. Nie należy kodować fikcyjnej reguły „Delta Rocket zawsze jest najwyżej”.
+Lokalne reguły i skille nie mogą uchylać instrukcji wyższej rangi ani nadawać uprawnień narzędziom. W tej instalacji instrukcje użytkownika mają pierwszeństwo przed wskazówkami skillów, lecz szczegóły dostarczenia instrukcji są zależne od hosta. Nie należy kodować fikcyjnej reguły „DeltaRocket zawsze jest najwyżej”.
 
-**Rekomendacja:** rozwiązywać konflikt przez ograniczenie aktywnych źródeł. Podczas pracy Delta Rocket nie powinien automatycznie wywoływać oryginalnych `using-superpowers`, `writing-plans`, `executing-plans`, SDD i `requesting-code-review`. Pozostawienie tych skillów w katalogu bez kontroli triggerów nie gwarantuje izolacji.
+**Rekomendacja:** rozwiązywać konflikt przez ograniczenie aktywnych źródeł. Podczas pracy DeltaRocket nie powinien automatycznie wywoływać oryginalnych `using-superpowers`, `writing-plans`, `executing-plans`, SDD i `requesting-code-review`. Pozostawienie tych skillów w katalogu bez kontroli triggerów nie gwarantuje izolacji.
 
 ### 3.4. Subagenci i warianty orkiestracji
 
@@ -94,7 +94,7 @@ Dokumentacja opisuje także własnych agentów w plikach TOML, z `name`, `descri
 
 ### 3.6. Desktop, CLI, IDE i API
 
-| Środowisko | Znaczenie dla Delta Rocket |
+| Środowisko | Znaczenie dla DeltaRocket |
 |---|---|
 | Desktop Windows | Główne środowisko pracy. Natywny PowerShell, obsługa skills, pluginów i worktrees. Nie zakładać WSL ani Bash.[^14] |
 | CLI | Najlepszy kandydat do powtarzalnego benchmarku i rejestrowania JSONL. Wersję binarną zapisywać w każdym pomiarze.[^15] |
@@ -112,11 +112,11 @@ SDD wymaga nowego implementera dla zadania, review zadania i końcowego review g
 
 Wspólny reviewer sprawdza zgodność i jakość jednego diffu. Nie ma delegować dalej i nie powinien powtarzać całych testów. Może sprawdzać kod poza diffem dla konkretnego ryzyka. Problemem jest m.in. reguła traktująca każdy szum lub warning testowy jako finding — bez rozróżnienia istniejącego ostrzeżenia od regresji.[^17]
 
-Ponowne review jest już ograniczone do listy usterek i diffu poprawek. To dobra podstawa drugiej rundy Delta Rocket. Nie należy jednak bezmyślnie przenosić reguły, że wszystko poza diffem poprawek jest nieblokujące: w końcowym review całej zmiany przypadkowo odkryta poważna usterka nadal wymaga oceny.[^18]
+Ponowne review jest już ograniczone do listy usterek i diffu poprawek. To dobra podstawa drugiej rundy DeltaRocket. Nie należy jednak bezmyślnie przenosić reguły, że wszystko poza diffem poprawek jest nieblokujące: w końcowym review całej zmiany przypadkowo odkryta poważna usterka nadal wymaga oceny.[^18]
 
 ### 4.2. Mapa adaptacji
 
-| Element | Aktualne zachowanie / korzyść | Koszt lub konflikt | Decyzja Delta Rocket |
+| Element | Aktualne zachowanie / korzyść | Koszt lub konflikt | Decyzja DeltaRocket |
 |---|---|---|---|
 | `using-superpowers` | Szeroka aktywacja; pilnowanie używania skillów | Czytanie dodatkowych instrukcji i konflikt triggerów | Usunąć obowiązek ładowania Superpowers; jeden jasno nazwany workflow[^19] |
 | `brainstorming` | Klasyfikacja pracy i projekt przed implementacją | Akceptacja także małych zmian, dodatkowy przegląd specyfikacji | Zachować rozumienie celu; pytać tylko o materialne nierozstrzygnięte decyzje[^20] |
@@ -138,17 +138,17 @@ Ponowne review jest już ograniczone do listy usterek i diffu poprawek. To dobra
 
 Hook `session-start` Superpowers wstrzykuje instrukcje `using-superpowers`. Samo wyłączenie wyboru jednego skilla może zatem nie wystarczyć, jeśli aktywny plugin nadal dostarcza bootstrap. Ponytail także ma hooki aktywujące reguły, w tym przy starcie subagenta.[^29][^30]
 
-**Rekomendowana strategia:** osobne, jawnie wybrane środowisko/profil testowy albo kontrolowane wyłączenie kolidujących komponentów dla sesji Delta Rocket. Przed wdrożeniem należy zinwentaryzować lokalne katalogi skillów, pluginy i hooki. Nie usuwać ich automatycznie i nie zakładać, że kopia w innym katalogu jest nieaktywna.
+**Rekomendowana strategia:** osobne, jawnie wybrane środowisko/profil testowy albo kontrolowane wyłączenie kolidujących komponentów dla sesji DeltaRocket. Przed wdrożeniem należy zinwentaryzować lokalne katalogi skillów, pluginy i hooki. Nie usuwać ich automatycznie i nie zakładać, że kopia w innym katalogu jest nieaktywna.
 
-Opcja zachowania Superpowers „obok” jest możliwa jako katalog innych, świadomie wybieranych metod. Nie powinna oznaczać uruchamiania jego pełnego routera wewnątrz Delta Rocket. Aktualizacje upstream należy przenosić selektywnie po teście regresji instrukcji, nie przez automatyczne dołączanie całego `main`.
+Opcja zachowania Superpowers „obok” jest możliwa jako katalog innych, świadomie wybieranych metod. Nie powinna oznaczać uruchamiania jego pełnego routera wewnątrz DeltaRocket. Aktualizacje upstream należy przenosić selektywnie po teście regresji instrukcji, nie przez automatyczne dołączanie całego `main`.
 
 ## 5. Ponytail i Caveman: zakres adaptacji
 
 ### 5.1. Prostota implementacji
 
-Ponytail preferuje ponowne użycie istniejącego kodu, standardowych bibliotek, funkcji platformy i dostępnych zależności. Chroni walidację, bezpieczeństwo, obsługę utraty danych oraz dostępność. Jednocześnie zawiera mocniejsze postulaty: preferowanie jednej linii, minimalnej liczby plików, domyślne dostarczenie uproszczonej wersji i ograniczanie testów. Te elementy nie powinny przejść do Delta Rocket bez zmian.[^31]
+Ponytail preferuje ponowne użycie istniejącego kodu, standardowych bibliotek, funkcji platformy i dostępnych zależności. Chroni walidację, bezpieczeństwo, obsługę utraty danych oraz dostępność. Jednocześnie zawiera mocniejsze postulaty: preferowanie jednej linii, minimalnej liczby plików, domyślne dostarczenie uproszczonej wersji i ograniczanie testów. Te elementy nie powinny przejść do DeltaRocket bez zmian.[^31]
 
-**Proponowany kontrakt Delta Rocket:**
+**Proponowany kontrakt DeltaRocket:**
 
 1. Zrozum wymaganie i przepływ, którego dotyczy zmiana.
 2. Sprawdź, czy istniejąca implementacja lub platforma już je spełnia.
@@ -163,7 +163,7 @@ Prostota powinna być ograniczeniem podczas budowania. Osobny końcowy „ponyta
 
 ### 5.2. Zwięzłość komunikacji
 
-Caveman oddziela treść techniczną od otaczającej ją prozy. Chroni dokładne błędy, liczby, kod i tekst zapisywany poza czatem. Zawiera jednak bezwzględny zakaz narracji narzędziowej oraz stylizację języka, które nie są wymaganiami Delta Rocket i mogą kolidować z hostem.[^32]
+Caveman oddziela treść techniczną od otaczającej ją prozy. Chroni dokładne błędy, liczby, kod i tekst zapisywany poza czatem. Zawiera jednak bezwzględny zakaz narracji narzędziowej oraz stylizację języka, które nie są wymaganiami DeltaRocket i mogą kolidować z hostem.[^32]
 
 **Proponowany kontrakt komunikacji:**
 
@@ -179,7 +179,7 @@ Proponowany cel to zwykle 2–4 krótkie zdania na zakończenie zwykłego zadani
 
 Skill nie steruje wszystkimi panelami, kartami narzędzi i widokiem zmian aplikacji. Może ograniczyć własne komunikaty oraz objętość wyników narzędzi pobieranych do kontekstu. Nie może obiecać „ukrycia wszystkiego w Codexie”. Nie powinien też deklarować, że krótka wypowiedź oznacza mniej wewnętrznego rozumowania.
 
-## 6. Docelowy proces Delta Rocket
+## 6. Docelowy proces DeltaRocket
 
 Poniższy proces jest rekomendacją projektową. Nie jest opisem wbudowanej funkcji Codexa.
 
@@ -235,7 +235,7 @@ flowchart TD
 
 ### 6.4. Stan po kompakcji
 
-Dokumentacja opisuje kompakcję i eksperymentalne zarządzanie kontekstem dostępne tylko w określonych konfiguracjach. Delta Rocket nie powinien od tego eksperymentu uzależniać poprawnego wznowienia.[^5][^12]
+Dokumentacja opisuje kompakcję i eksperymentalne zarządzanie kontekstem dostępne tylko w określonych konfiguracjach. DeltaRocket nie powinien od tego eksperymentu uzależniać poprawnego wznowienia.[^5][^12]
 
 **Rekomendacja:** jeden mały dokument stanu dla nietrywialnego zakresu. Może być częścią planu, aby nie mnożyć plików. Powinien przechowywać:
 
@@ -255,7 +255,7 @@ Nie należy automatycznie kasować jedynego zapisu usterek i decyzji. Historia G
 
 Worktree służy izolacji checkoutów, a nie jest obowiązkową jednostką każdego modułu. Oficjalna dokumentacja wskazuje oddzielne pliki robocze przy współdzielonej historii Git i opisuje zarządzanie nimi przez aplikację.[^33]
 
-Delta Rocket powinien wykorzystać już istniejącą izolację. Przy jednym implementerze, czystym katalogu i braku równoległej pracy wystarczy bieżący checkout lub uzgodniona gałąź. Worktree ma sens, gdy użytkownik edytuje równolegle, istnieją niezwiązane zmiany albo potrzebna jest izolacja eksperymentu. Testy w osobnych checkoutach nadal mogą kolidować przez porty, bazę danych i wspólne pliki zewnętrzne.
+DeltaRocket powinien wykorzystać już istniejącą izolację. Przy jednym implementerze, czystym katalogu i braku równoległej pracy wystarczy bieżący checkout lub uzgodniona gałąź. Worktree ma sens, gdy użytkownik edytuje równolegle, istnieją niezwiązane zmiany albo potrzebna jest izolacja eksperymentu. Testy w osobnych checkoutach nadal mogą kolidować przez porty, bazę danych i wspólne pliki zewnętrzne.
 
 Reviewer czyta stabilny stan. Główny agent nie zmienia tych samych plików w trakcie review. Jeśli praca trwa równolegle, reviewer potrzebuje nieruchomej wersji kodu albo własnego izolowanego checkoutu. Sam `git diff HEAD` nie obejmuje plików untracked; pakiet review musi je uwzględniać. Dla pustego repozytorium punkt odniesienia wymaga jawnej obsługi, zamiast ślepego `HEAD~1`.
 
@@ -321,7 +321,7 @@ W v0.1 ograniczenie rekurencji jest zapisane w instrukcji każdego delegowanego 
 
 ### 8.1. Co rzeczywiście kosztuje
 
-| Składnik | Sposób ograniczenia w Delta Rocket | Granica |
+| Składnik | Sposób ograniczenia w DeltaRocket | Granica |
 |---|---|---|
 | Narracja | Krótkie aktualizacje i finał | Nie ucinać informacji o błędzie lub decyzji |
 | Generowany kod | Mniej zbędnej implementacji | Zachować pełne wymagania i jakość |
@@ -352,7 +352,7 @@ Widoczna narracja może być liczona oddzielnie z tekstu wiadomości, ale przybl
 
 Raport autorów z 18 czerwca 2026 r. opisuje Haiku 4.5 w Claude Code 2.1.177, cztery powtórzenia, 12 zadań funkcjonalnych i osobne testy bezpieczeństwa. Podaje ok. 54% mniej dodanych linii, 22% mniej tokenów, 20% niższy koszt i 27% krótszy czas. Wariant Caveman dla funkcji ma +7% tokenów. Część uruchomień przerwano; ich kod uwzględniono, ale nie cały koszt i czas. Dla zadań funkcjonalnych nie wykonywano pełnej walidacji aplikacji w serwerze/przeglądarce.[^39]
 
-**Własne przeliczenie tabeli LOC:** suma wartości bazowych to 2217, Ponytail 1015; redukcja sum wynosi 54,2%. Średnia nieważona redukcji procentowej poszczególnych zadań wynosi natomiast 35,4%. Są to różne agregaty. Raport Delta Rocket musi jasno nazywać wybrany sposób liczenia i pokazywać wyniki per zadanie.
+**Własne przeliczenie tabeli LOC:** suma wartości bazowych to 2217, Ponytail 1015; redukcja sum wynosi 54,2%. Średnia nieważona redukcji procentowej poszczególnych zadań wynosi natomiast 35,4%. Są to różne agregaty. Raport DeltaRocket musi jasno nazywać wybrany sposób liczenia i pokazywać wyniki per zadanie.
 
 Badanie wspiera hipotezę o ograniczeniu overengineeringu w określonych zadaniach. Nie dowodzi równoważności funkcjonalnej każdej krótszej implementacji ani oszczędności Astry. Wysoki odsetek zaliczonych sprawdzeń konkretnych podatności nie oznacza „100% bezpiecznego kodu”.
 
@@ -360,7 +360,7 @@ Badanie wspiera hipotezę o ograniczeniu overengineeringu w określonych zadania
 
 W przypiętym commicie README nadal reklamuje 65% redukcji output. Jednak `docs/HONEST-NUMBERS.md` podaje, że zweryfikowany wynik zagregowany nie został opublikowany, oraz wskazuje brak zatwierdzonych surowych rezultatów. Dokument opisuje też koszt dodanych instrukcji rzędu 1–1,5 tys. tokenów na turę.[^40][^41]
 
-To nierozstrzygnięta sprzeczność wewnątrz projektu. Nie należy używać 65% jako oczekiwanego wyniku Delta Rocket. Koszt ponownego przekazywania instrukcji zależy też od klienta i cache; szacunek autorów nie jest stałym narzutem każdego Codexa.
+To nierozstrzygnięta sprzeczność wewnątrz projektu. Nie należy używać 65% jako oczekiwanego wyniku DeltaRocket. Koszt ponownego przekazywania instrukcji zależy też od klienta i cache; szacunek autorów nie jest stałym narzutem każdego Codexa.
 
 Rekomendacja to przejęcie kilku zasad redakcyjnych, bez całego trybu, przykładów i wariantów językowych. Oszczędność czytania dla człowieka jest prawdopodobną korzyścią użytkową; oszczędność tokenów całej sesji pozostaje hipotezą do pomiaru.
 
@@ -368,13 +368,13 @@ Rekomendacja to przejęcie kilku zasad redakcyjnych, bez całego trybu, przykła
 
 Dla planu z `N` zadaniami liczba przeglądów modelowych w analizowanym SDD może być opisana jako `N + suma(r_i) + f`, gdzie `r_i` to 0–5 re-review dla zadania, a `f` to 1–2 przeglądy końcowe. To liczba ocen, niekoniecznie nowych tożsamości agentów.[^1]
 
-Przykład arytmetyczny, nie benchmark: dziesięć zadań bez poprawek oznacza jedenaście ocen; przy wykorzystaniu wszystkich limitów byłoby ich do 62. Delta Rocket przewiduje 0–2. Nie można z tej różnicy obliczyć procentu oszczędności tokenów: końcowy reviewer ma większy zakres, a główny agent przejmuje implementację i naprawy.
+Przykład arytmetyczny, nie benchmark: dziesięć zadań bez poprawek oznacza jedenaście ocen; przy wykorzystaniu wszystkich limitów byłoby ich do 62. DeltaRocket przewiduje 0–2. Nie można z tej różnicy obliczyć procentu oszczędności tokenów: końcowy reviewer ma większy zakres, a główny agent przejmuje implementację i naprawy.
 
-## 9. Benchmark Delta Rocket
+## 9. Benchmark DeltaRocket
 
 ### 9.1. Warianty i izolacja
 
-Porównać trzy warianty: A — Codex bez badanych metodologii; B — przypięty aktualny Superpowers; C — Delta Rocket. Zachować identyczne wymagania, początkowy commit, model, effort, narzędzia, uprawnienia i zależności. Instrukcje domenowe projektu pozostają wspólne.
+Porównać trzy warianty: A — Codex bez badanych metodologii; B — przypięty aktualny Superpowers; C — DeltaRocket. Zachować identyczne wymagania, początkowy commit, model, effort, narzędzia, uprawnienia i zależności. Instrukcje domenowe projektu pozostają wspólne.
 
 Osobny katalog kodu nie wystarczy do izolacji, jeśli globalny plugin wstrzykuje reguły do każdego wariantu. Przed pomiarem należy sprawdzić aktywne skills, hooki, instrukcje i automatycznie ładowaną pamięć. Benchmark Ponytail sam opisuje naprawiony przypadek zanieczyszczenia baseline przez plugin.[^39]
 
@@ -466,7 +466,7 @@ Superpowers ma licencję MIT z oznaczeniem Jesse Vincent, 2025. Ponytail ma MIT 
 
 Dla kopiowanych lub istotnie adaptowanych treści MIT należy zachować właściwą notę copyright i treść licencji. Samo wymienienie projektu w README nie zastępuje tych not. Proponowany `THIRD_PARTY_NOTICES.md` powinien wskazywać projekt, przypiętą wersję i konkretne adaptowane pliki. Własne reguły procesu należy odróżnić od przeniesionych fragmentów.
 
-Delta Rocket v0.1 nie potrzebuje komponentów BSL Caveman. W razie późniejszego dodania proxy, silnika kompresji lub kodu runtime konieczna jest osobna weryfikacja licencji konkretnego komponentu. Nie należy przedstawiać całego repozytorium Caveman jako jednolicie MIT ani sugerować afiliacji z autorami trzech projektów.
+DeltaRocket v0.1 nie potrzebuje komponentów BSL Caveman. W razie późniejszego dodania proxy, silnika kompresji lub kodu runtime konieczna jest osobna weryfikacja licencji konkretnego komponentu. Nie należy przedstawiać całego repozytorium Caveman jako jednolicie MIT ani sugerować afiliacji z autorami trzech projektów.
 
 ## 11. Ryzyka, luki i brief implementacyjny
 
@@ -485,7 +485,7 @@ Delta Rocket v0.1 nie potrzebuje komponentów BSL Caveman. W razie późniejszeg
 | Sprzeczne liczby Caveman | Niewiarygodna prognoza procentowa | Nie przyjmować deklarowanych 65% |
 | Zbyt silna kompresja | Nieczytelny finał lub ukrycie problemu | Pełne komunikaty w sytuacjach wymagających decyzji |
 
-Nie wykonano jeszcze benchmarku Delta Rocket, testu jego aktywacji ani próby egzekwowania limitu na działającym skillu. Nie potwierdzono, że dowolny numer wersji desktopu używa dokładnie kodu CLI 0.145.0. Nie ustalono też uniwersalnej semantyki agregacji tokenów rodzica i dzieci we wszystkich klientach.
+Nie wykonano jeszcze benchmarku DeltaRocket, testu jego aktywacji ani próby egzekwowania limitu na działającym skillu. Nie potwierdzono, że dowolny numer wersji desktopu używa dokładnie kodu CLI 0.145.0. Nie ustalono też uniwersalnej semantyki agregacji tokenów rodzica i dzieci we wszystkich klientach.
 
 Nie są to przeszkody dla zaprojektowania v0.1. Są to konkretne pozycje walidacji, których nie wolno zastępować deklaracją skuteczności.
 
@@ -503,7 +503,7 @@ Nie są to przeszkody dla zaprojektowania v0.1. Są to konkretne pozycje walidac
 
 ### 11.3. Brief do następnej sesji Codexa
 
-Zaprojektuj, a po zatwierdzeniu uzgodnionego projektu zbuduj skill Delta Rocket w repozytorium DeltaRocket. Skorzystaj z niniejszego raportu jako podstawy i zachowaj rozdział między potwierdzonymi możliwościami Codexa a rekomendacjami procesu.
+Zaprojektuj, a po zatwierdzeniu uzgodnionego projektu zbuduj skill DeltaRocket w repozytorium DeltaRocket. Skorzystaj z niniejszego raportu jako podstawy i zachowaj rozdział między potwierdzonymi możliwościami Codexa a rekomendacjami procesu.
 
 Rezultat ma obejmować mały `SKILL.md`, wymagane referencje, metadane aktywacji oraz atrybucję adaptowanych treści. Główny agent implementuje większe spójne moduły. Review jest globalne dla zaakceptowanego zakresu, najwyżej dwie rundy, bez review po każdym punkcie i bez rekurencji reviewerów. Po drugiej rundzie dopuszczalna jest lokalna naprawa z dowodem; brak wystarczającej weryfikacji oznacza blokadę, nie pozorny sukces.
 

@@ -1,4 +1,4 @@
-# Delta Rocket — plan modułów
+# DeltaRocket — plan modułów
 
 Status: projekt zatwierdzony w rozmowie; jedno niezależne review planu wykonane,
 bez istotnych uwag. Szczegóły liczników i zakończenia określa specyfikacja.

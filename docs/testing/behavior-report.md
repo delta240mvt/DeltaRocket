@@ -1,4 +1,4 @@
-# Delta Rocket behavioral trial
+# DeltaRocket behavioral trial
 
 Simulation only. Read entrypoint, brainstorming, execution, review-policy, code-review, receiving-code-review, systematic-debugging and verification-before-completion references. No application code, tests, git operations, actual reviews or further agents ran. Repository untouched.
 

@@ -1,4 +1,4 @@
-# Delta Rocket — kontrakt v0.2
+# DeltaRocket — kontrakt v0.2
 
 Zatwierdzona korekta po audycie 13 września 2026. Ta wersja zmienia wskazane
 niżej reguły v0.1; pozostały kontrakt pozostaje w mocy. Historia v0.1 jest

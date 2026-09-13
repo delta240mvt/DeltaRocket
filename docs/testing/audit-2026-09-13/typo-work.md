@@ -1,7 +1,7 @@
 # UI title typo — work record
 
 ## Accepted decisions
-User approved exact scope and target. Change only settings.json ui.title from Delat Rocket to Delta Rocket. Preserve ui.theme dark and document shape. No unresolved design questions or meaningful architectural alternatives. Literal replacement is sufficient.
+User approved exact scope and target. Change only settings.json ui.title from Delat Rocket to DeltaRocket. Preserve ui.theme dark and document shape. No unresolved design questions or meaningful architectural alternatives. Literal replacement is sufficient.
 
 ## Plan
 M1: correct the UI title in settings.json. No dependencies or module interfaces. Excludes theme and every other setting. Verify JSON parsing, expected title, preserved theme, and exact final text.
@@ -11,7 +11,7 @@ M1: correct the UI title in settings.json. No dependencies or module interfaces.
 - Plan 1/1: COMPLETE, accepted, no findings. Exact requested outcome covered; one coherent module, no dependency order concerns, literal change and parser checks are proportionate. Evidence: accepted decisions, M1, initial JSON. This inline assessment is not independent.
 
 ## Specification
-M1 accepts initial JSON exactly {"ui":{"title":"Delat Rocket","theme":"dark"}} and produces exactly {"ui":{"title":"Delta Rocket","theme":"dark"}}. Parse must succeed. Root has only ui; ui retains exactly title and theme. No runtime behavior, dependencies, schema migration, performance or security changes. Unexpected initial contents stop the replacement rather than editing a different value. Validation: exact source guard, exact target comparison, ConvertFrom-Json, property assertions. The user's prior approval covers this contract.
+M1 accepts initial JSON exactly {"ui":{"title":"Delat Rocket","theme":"dark"}} and produces exactly {"ui":{"title":"DeltaRocket","theme":"dark"}}. Parse must succeed. Root has only ui; ui retains exactly title and theme. No runtime behavior, dependencies, schema migration, performance or security changes. Unexpected initial contents stop the replacement rather than editing a different value. Validation: exact source guard, exact target comparison, ConvertFrom-Json, property assertions. The user's prior approval covers this contract.
 
 - Spec 1/1: RESERVED. Snapshot: specification above and unchanged accepted plan. Inline fallback, not independent.
 - Spec 1/1: COMPLETE, accepted, no findings. Exact input/output and preservation requirements are unambiguous, checks cover the requested change and accidental extra edits, and M1 is aligned. Evidence: full work note and initial settings.json. No corrections or verification gaps.

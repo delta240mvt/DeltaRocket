@@ -1,4 +1,4 @@
-# Delta Rocket — specyfikacja v0.1
+# DeltaRocket — specyfikacja v0.1
 
 Realizuje projekt zatwierdzony w rozmowie 2026-09-13, z późniejszą korektą
 użytkownika: do dwóch rund review każdego dużego modułu oraz dokładnie dwie
@@ -89,7 +89,7 @@ Nie zmieniamy istniejących skilli, globalnej konfiguracji ani uprawnień.
 - Scenariusze: nieznane wymaganie, zatwierdzony projekt, granice modułu,
   wznowienie z wyczerpanym limitem, final 1 bez uwag, poprawka po final 2,
   brak subagentów, nowy plik w pustym repo, błędny feedback.
-- Kontrola bez Delta Rocket pokazuje zachowanie źródłowego procesu;
+- Kontrola bez DeltaRocket pokazuje zachowanie źródłowego procesu;
   próby z nowym skillem sprawdzają decyzje i ślady wykonania w izolowanym miejscu.
 - Dwie końcowe oceny pakietu; bez benchmarku oszczędności i bez twierdzenia,
   że krótki test dowodzi niezawodności dla wszystkich przyszłych zadań.

@@ -1,9 +1,9 @@
 ---
 name: delta-rocket
-description: Use when designing and building a software feature or project through a structured workflow, or when the user requests Delta Rocket. Covers design decisions through verified implementation; standalone questions and isolated reviews do not need the full workflow.
+description: Use when designing and building a software feature or project through a structured workflow, or when the user requests DeltaRocket. Covers design decisions through verified implementation; standalone questions and isolated reviews do not need the full workflow.
 ---
 
-# Delta Rocket
+# DeltaRocket
 
 Build agreed behavior with simple, readable code and concise communication.
 The main agent owns implementation. Use these self-contained phase instructions;

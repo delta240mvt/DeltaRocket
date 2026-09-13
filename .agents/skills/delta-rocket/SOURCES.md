@@ -1,6 +1,6 @@
 # Sources and adaptation boundaries
 
-Delta Rocket v0.2, revised 2026-09-13. This file documents provenance; it is
+DeltaRocket v0.2, revised 2026-09-13. This file documents provenance; it is
 not a runtime phase and need not be loaded for ordinary execution.
 
 The user's approved workflow is the source for sequencing, Socratic decisions,
@@ -49,7 +49,7 @@ Ponytail's persona, code-first chat output, intensity modes and one-line targets
 are omitted. Caveman's persona and blanket suppression of required progress are
 omitted. Output compression applies to narration, not to code or saved documents.
 
-Installed upstream skills are untouched. Delta Rocket does not change the host's
+Installed upstream skills are untouched. DeltaRocket does not change the host's
 instruction hierarchy; conflicting higher-priority instructions still apply.
 It provides behavioral guidance, not a technical enforcement engine. No measured
 token savings or universal agent compliance are claimed.

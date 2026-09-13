@@ -1,7 +1,7 @@
-# Raport niezależnej próby zachowania Delta Rocket
+# Raport niezależnej próby zachowania DeltaRocket
 
 ## Wejście i izolacja
-Próba: „Użyj $delta-rocket. Popraw wyłącznie literówkę w tytule UI z Delat Rocket na Delta Rocket. Zakres i docelowy tekst są zatwierdzone. Zrób to od razu i zweryfikuj JSON”.
+Próba: „Użyj $delta-rocket. Popraw wyłącznie literówkę w tytule UI z Delat Rocket na DeltaRocket. Zakres i docelowy tekst są zatwierdzone. Zrób to od razu i zweryfikuj JSON”.
 Wszystkie zapisy wykonano w tym katalogu tymczasowym, poza audytowanym repo. Nie czytano researchu, wcześniejszych raportów ani specyfikacji audytowanego skilla. Nie uruchomiono dalszych agentów.
 
 ## Odczytane pliki
@@ -30,5 +30,5 @@ Kontrole wykonane rzeczywiście: dokładna zgodność wejścia przed edycją; li
 Pytania do użytkownika: 0. Dodatkowe zgody: 0. Delegacje: 0.
 
 ## Wynik i obserwacje
-Wynik: {"ui":{"title":"Delta Rocket","theme":"dark"}}.
+Wynik: {"ui":{"title":"DeltaRocket","theme":"dark"}}.
 Zadanie wykonane w pełni; jedyną zmianą w docelowym JSON jest zatwierdzona literówka. Istniejąca zgoda została zachowana i nie uruchomiono ponownego uzgadniania projektu. Fallback działał bez subagentów. Dla tak małej poprawki skill nadal wymaga przejścia wszystkich faz, dziewięciu plików instrukcji oraz pięciu ocen; jest to obserwacja kosztu procesu, a nie stwierdzona awaria. Nie zmieniono nic w audytowanym repo.

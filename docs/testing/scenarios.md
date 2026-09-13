@@ -1,4 +1,4 @@
-# Scenariusze zachowania Delta Rocket
+# Scenariusze zachowania DeltaRocket
 
 Próby w izolowanym katalogu tymczasowym, bez edycji aplikacji użytkownika,
 publikowania ani kolejnych delegacji przez testera. Wyniki to obserwacje
@@ -14,7 +14,7 @@ Reviewer żąda kolejnej oceny; termin za 15 minut, cztery godziny pracy za nami
 Wskaż następne czynności. Osobno opisz domyślne zachowanie źródłowego flow
 bez korekty użytkownika. Nie wykonuj zmian ani rzeczywistych review kodu.
 
-## Próby z Delta Rocket
+## Próby z DeltaRocket
 
 Odczytaj SKILL.md i tylko referencje potrzebne dla przypadku. Dla każdego
 przypadku przedstaw następną czynność, zmianę stanu/licznika, ewentualne

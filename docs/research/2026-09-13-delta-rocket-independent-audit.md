@@ -1,10 +1,10 @@
-**Delta Rocket — niezależny audyt względem Deep Researchu**
+**DeltaRocket — niezależny audyt względem Deep Researchu**
 
 Data: 13 września 2026. Audytowany commit: `a1e6ac6a7c1ce81c159c80c98f0f5c1304cde2d2`. Na początku audytu drzewo Git było czyste. Audyt nie zmienia instrukcji skilla ani konfiguracji globalnej.
 
 **Werdykt**
 
-Delta Rocket jest spójną i sensownie napisaną wersją v0.1 do prowadzenia większych prac programistycznych. Ma poprawny format, mały rdzeń, samodzielne metody i dobre reguły ochrony wymagań. Nie znalazłem krytycznej sprzeczności, która w zwykłym, pomyślnym przebiegu uniemożliwiałaby wykonanie jego obecnej specyfikacji.
+DeltaRocket jest spójną i sensownie napisaną wersją v0.1 do prowadzenia większych prac programistycznych. Ma poprawny format, mały rdzeń, samodzielne metody i dobre reguły ochrony wymagań. Nie znalazłem krytycznej sprzeczności, która w zwykłym, pomyślnym przebiegu uniemożliwiałaby wykonanie jego obecnej specyfikacji.
 
 Nie ma jednak podstaw, aby nazwać go bezbłędnym, potwierdzić jego przewagę wydajnościową albo zaliczyć go do najlepszych skilli na podstawie wyników. Potwierdziłem nadmierny narzut przy drobnej zmianie. Zidentyfikowałem też ograniczenie domykania procesu po awarii reviewera oraz braki walidacji aktywacji, współistnienia z innymi workflow i rzeczywistych rezultatów budowania aplikacji.
 
@@ -67,7 +67,7 @@ Nie rekomenduję automatycznego przywrócenia wszystkich rekomendacji researchu 
 
 W [SKILL.md](<C:/Users/delta/Desktop/FRINTER.APP + PERSONAL BRAND/FRINTER - CURSOR - 26.11.25/DeltaRocket/.agents/skills/delta-rocket/SKILL.md:26>) nawet mała zmiana zachowuje kolejność faz i budżety. Skrócenie trzech dokumentów do sekcji jednej notatki zmniejsza liczbę plików, lecz nie usuwa ocen.
 
-Niezależny tester poprawił `Delat Rocket` na `Delta Rocket` w istniejącym JSON. Faktyczny przebieg: 9 odczytanych plików skilla, 5 ocen inline — plan, specyfikacja, moduł i dwa finały. Każda ocena była czysta. Zachowano pozostałą zawartość JSON i nie zadano pytań. Odnotowane pięć ocen to samokontrole tego samego wykonawcy, nie pięć niezależnych audytów.
+Niezależny tester poprawił `Delat Rocket` na `DeltaRocket` w istniejącym JSON. Faktyczny przebieg: 9 odczytanych plików skilla, 5 ocen inline — plan, specyfikacja, moduł i dwa finały. Każda ocena była czysta. Zachowano pozostałą zawartość JSON i nie zadano pytań. Odnotowane pięć ocen to samokontrole tego samego wykonawcy, nie pięć niezależnych audytów.
 
 To wynik zgodny z obecnymi instrukcjami, ale nieproporcjonalny do ryzyka tej poprawki. Podważa uniwersalną efektywność procesu. Nie przeliczam go na procentowy koszt tokenów lub czasu.
 
@@ -119,7 +119,7 @@ Skill zakazuje uruchamiania obcego orkiestratora, ale ta instrukcja nie kontrolu
 
 Research przewidział tę różnicę między dostępnością skilla a izolacją aktywnego środowiska. [Współistnienie](<C:/Users/delta/Desktop/FRINTER.APP + PERSONAL BRAND/FRINTER - CURSOR - 26.11.25/DeltaRocket/docs/research/2026-09-13-delta-rocket-deep-research.md:137>).
 
-Poprawa: krótki, warunkowy dokument kompatybilności oraz test w świeżej sesji: jawne Delta Rocket, automatyczne dopasowanie, zwykłe pytanie, sam audyt, obecność obcego routera, wznowienie po kompakcji. Zapisać faktycznie odczytane instrukcje i uruchomione narzędzia. Nie dopisywać deklaracji „Delta Rocket zawsze wygrywa” i nie zmieniać po cichu globalnych pluginów.
+Poprawa: krótki, warunkowy dokument kompatybilności oraz test w świeżej sesji: jawne DeltaRocket, automatyczne dopasowanie, zwykłe pytanie, sam audyt, obecność obcego routera, wznowienie po kompakcji. Zapisać faktycznie odczytane instrukcje i uruchomione narzędzia. Nie dopisywać deklaracji „DeltaRocket zawsze wygrywa” i nie zmieniać po cichu globalnych pluginów.
 
 Automatyczne dopasowanie można zachować zgodnie z R1. Trzeba wykazać, że nie uruchamia pełnego procesu dla pytań lub drobnych zadań. Oficjalne zalecenia podkreślają wąskie opisy aktywacji i ryzyko wzajemnie sprzecznych instrukcji. [Rethinking skills and prompts for GPT-6 Astra](https://learn.chatgpt.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra).
 
@@ -152,7 +152,7 @@ Nie budować bazy danych ani kontrolera agentów, zanim rzeczywiste próby nie p
 
 Są to testy do wykonania, a nie zaliczone wyniki niniejszego audytu.
 
-Najpierw dziewięć prób pilotażowych: trzy zadania × trzy warianty — czysty Codex, przypięty Superpowers, Delta Rocket. Następnie zestaw z researchu: sześć zadań × trzy warianty × trzy powtórzenia. Dla walidacji lekkiej ścieżki porównać dodatkowo niezmienione v0.1 z kandydatem v0.2.
+Najpierw dziewięć prób pilotażowych: trzy zadania × trzy warianty — czysty Codex, przypięty Superpowers, DeltaRocket. Następnie zestaw z researchu: sześć zadań × trzy warianty × trzy powtórzenia. Dla walidacji lekkiej ścieżki porównać dodatkowo niezmienione v0.1 z kandydatem v0.2.
 
 Warunki: ten sam model i effort, identyczny stan repo, narzędzia, uprawnienia i kryteria akceptacji przygotowane przed próbami. Izolacja instrukcji musi być sprawdzona, nie tylko zadeklarowana. Liczyć wszystkie dzieci, zachowywać nieudane przebiegi, nie sumować podwójnie narastających liczników i nie zastępować brakujących danych zerem.
 
