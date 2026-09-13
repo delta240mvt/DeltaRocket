@@ -1,0 +1,9 @@
+{
+  "LegacyPreserved": true,
+  "SameIncidentEntriesAfterResume": 1,
+  "StateLinksLedger": true,
+  "RecoveryObservations": 2,
+  "ActualApplicationTestsRun": 0,
+  "ActualReviewersRun": 0,
+  "Validation": "PASS: actual file bookkeeping assertions only"
+}

@@ -1,11 +1,13 @@
 # Sources and adaptation boundaries
 
-Delta Rocket v0.1, authored 2026-09-13. This file documents provenance; it is
+Delta Rocket v0.2, revised 2026-09-13. This file documents provenance; it is
 not a runtime phase and need not be loaded for ordinary execution.
 
 The user's approved workflow is the source for sequencing, Socratic decisions,
-main-agent implementation, up to two reviews per large module and two final
-whole-implementation rounds. Research reports are supporting analysis, not
+main-agent implementation, one review per large module and two final
+whole-implementation rounds. The v0.2 user revision adds a quick-change path and
+continuation after a technical final-2 failure recorded in a shared project ledger.
+Research reports are supporting analysis, not
 instructions that supersede those decisions.
 
 ## Upstream snapshots

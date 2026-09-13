@@ -21,27 +21,30 @@ For each planned module:
 2. Run the module's checks and inspect their results. For a failure, use
    [systematic debugging](../methods/systematic-debugging.md), then resume this
    module. Debugging does not restart design or grant review rounds.
-3. Once the whole module is ready, run its first combined contract/quality review.
+3. Once the whole module is ready, run its single combined contract/quality review.
    Process feedback using [receiving review](../methods/receiving-code-review.md).
    Fix justified findings as the main agent and verify the corrections.
-4. Use the optional second module review when corrections need another assessment.
-   Otherwise record why the first review suffices. Apply any remaining justified
-   corrections and run affected checks within the existing budget.
-5. Record the module's outcome, open findings and evidence. Continue to the next
+4. Verify corrections directly; do not dispatch a second module assessment.
+   Record the module's outcome, open findings and evidence. Continue to the next
    module when its acceptance criteria and required checks are met. Independent
    work may proceed while a genuine dependency remains blocked.
 
 Keep interfaces aligned across modules as you build. Finish all modules, then
-perform the two final whole-implementation reviews under review policy. After
+handle the two final whole-implementation rounds under review policy, including
+its continuation rule if final 2 fails technically. After
 the last corrections, use [verification](../methods/verification-before-completion.md).
 
 ## Durable work state
 
 Update `state.md` at phase/module boundaries and before each review dispatch.
 Record scope ID and accepted decisions; phase and next action; module statuses;
-plan/spec/module/final review counters; reviewed revision or file snapshot;
+plan/spec/module/final review attempts and completed assessments separately;
+reviewed revision or file snapshot;
 review report references; finding dispositions; verification commands/results.
 Reference artifacts instead of copying plans, code, logs or conversation history.
+Link any project-wide issue entries created under review policy. On resume,
+reuse those entries and handle relevant unresolved items without restarting
+unrelated work from the project's backlog.
 
 On resume, compare the state with the working tree and recorded reviews. Recover
 missing information from evidence. A missing or compacted history is not zero

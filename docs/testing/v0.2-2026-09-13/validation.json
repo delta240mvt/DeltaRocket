@@ -1,0 +1,33 @@
+{
+  "quick_validate": {
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  "git_diff_check": {
+    "exit_code": 0,
+    "note": "Only configured LF/CRLF conversion warnings; no whitespace errors."
+  },
+  "local_link_targets_checked": 51,
+  "broken_links": [],
+  "core_words": 578,
+  "ui_metadata_unchanged": true,
+  "skill_snapshot_sha256": {
+    "agents/openai.yaml": "960974a1102cb4a49e440dd1db5ee6ef4cda83edac668ac1484019c23e174719",
+    "methods/code-review.md": "b064b03de2876d23ff4b8f9bcb836252d8c3dc350a2d72539599aa9a945fffbd",
+    "methods/receiving-code-review.md": "c017d53f89627f38981d747a76d6f6605452390d29148909b2bb834bb9b2b652",
+    "methods/systematic-debugging.md": "e949ec18d3ac9bd5153c00a6b9bad8f25e00e12d3cc524e7ad27d1bd1d64aeda",
+    "methods/test-driven-development.md": "823c2b1a7fd895f5743c8fc7ef0570c3b4f47b0ed379872cdbecd1bf0fe6ddd6",
+    "methods/verification-before-completion.md": "16f22600bb0c39da2b745fd79dbe686d2aef890be8cb8add7eaf933b897f8b05",
+    "references/brainstorming.md": "2c8299dafe5a4d85b25d1dafb227c26a605d6e4a76cf59909464c71d25559582",
+    "references/execution.md": "8836b4592ca2d324a112587ea42033eed7f822003e1dba0aa2cb24be9b8efc06",
+    "references/planning.md": "e12aa1bd9bf0d623266ad6b34bf2cb29374f5b143ecf1e1bb95e98f7bb2b3c3d",
+    "references/review-policy.md": "30ca7518693e292575b7750b84de50d109351fa24ad597bd6646e96ac76d654f",
+    "references/specification.md": "d81ead83494537432b3fb6257e7112a10952cfc5fbf23d862f1b7bce4ccd18ad",
+    "SKILL.md": "67f0afcf659a707a64579bc5e5a859bf4b093a48ca52483ff7254ad173e56cef",
+    "SOURCES.md": "1f6f07a1625c85e22b2cb697d69934153be58e283ef3058a7f7961131a059043",
+    "THIRD_PARTY_NOTICES.md": "40f8875792e5f6293758b9091a7b1fafaf6a953b14deb7b278eab1009fef6b63"
+  },
+  "independent_quick_result_check": "PASS",
+  "independent_ledger_preservation_and_deduplication_check": "PASS",
+  "behavior_trials_are_not_a_benchmark": true
+}

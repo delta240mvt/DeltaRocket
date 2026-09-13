@@ -1,0 +1,3 @@
+PASS: JSON parses; exact target content; ui.title=Delta Rocket; ui.theme=dark; no extra content changes.
+{"ui":{"title":"Delta Rocket","theme":"dark"}}
+FINAL PASS: ConvertFrom-Json; exact target text; root keys ui; UI keys title,theme; title and preserved theme values. Exit 0.

@@ -12,15 +12,19 @@ Reuse still-valid evidence; changes invalidate checks for affected behavior.
 For final completion, confirm:
 
 - Approved behavior and module contracts are satisfied.
-- Required reviews occurred with preserved counters and scope coverage.
+- Required reviews occurred with preserved counters and scope coverage, or
+  [review policy](../references/review-policy.md)'s documented final-2 technical
+  failure exception applies. Quick changes require no formal reviews.
 - Justified review corrections are implemented and their checks pass.
 - No material unresolved findings are hidden by a consumed review budget.
 - The final summary describes the actual scope and verification limitations.
 
 After fixes from the second final review, run affected tests or concrete
-validation; do not start an unbudgeted third assessment. If required evidence
-is missing, continue obtaining it or report the precise blocker. Do not claim
-success because a deadline or review limit was reached.
+validation; do not start an unbudgeted third assessment. After a technical final-2
+failure, write the shared issue entry and finish with that limitation when the
+policy's conditions hold. Other missing required evidence still needs to be
+obtained or reported as a precise blocker. Do not claim success because a
+deadline or review limit was reached.
 
 Finishing does not itself authorize publishing, pushing, merging, deployment,
 external messages or destructive cleanup. Perform the actions the user actually

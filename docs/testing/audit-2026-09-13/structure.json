@@ -1,0 +1,201 @@
+{
+  "commit": "a1e6ac6a7c1ce81c159c80c98f0f5c1304cde2d2",
+  "quick_validate": {
+    "exit_code": 0,
+    "stdout": "Skill is valid!",
+    "stderr": ""
+  },
+  "package_files": [
+    {
+      "file": "agents/openai.yaml",
+      "words": 31,
+      "bytes": 249,
+      "sha256": "960974a1102cb4a49e440dd1db5ee6ef4cda83edac668ac1484019c23e174719"
+    },
+    {
+      "file": "methods/code-review.md",
+      "words": 240,
+      "bytes": 1759,
+      "sha256": "b064b03de2876d23ff4b8f9bcb836252d8c3dc350a2d72539599aa9a945fffbd"
+    },
+    {
+      "file": "methods/receiving-code-review.md",
+      "words": 175,
+      "bytes": 1235,
+      "sha256": "c017d53f89627f38981d747a76d6f6605452390d29148909b2bb834bb9b2b652"
+    },
+    {
+      "file": "methods/systematic-debugging.md",
+      "words": 251,
+      "bytes": 1849,
+      "sha256": "e949ec18d3ac9bd5153c00a6b9bad8f25e00e12d3cc524e7ad27d1bd1d64aeda"
+    },
+    {
+      "file": "methods/test-driven-development.md",
+      "words": 194,
+      "bytes": 1317,
+      "sha256": "823c2b1a7fd895f5743c8fc7ef0570c3b4f47b0ed379872cdbecd1bf0fe6ddd6"
+    },
+    {
+      "file": "methods/verification-before-completion.md",
+      "words": 213,
+      "bytes": 1484,
+      "sha256": "ed1fccee06ff1f69d1ecd2370a6e9fdc7c7a03bfe7aa3f2d16774a500bb1edb0"
+    },
+    {
+      "file": "references/brainstorming.md",
+      "words": 249,
+      "bytes": 1677,
+      "sha256": "2c8299dafe5a4d85b25d1dafb227c26a605d6e4a76cf59909464c71d25559582"
+    },
+    {
+      "file": "references/execution.md",
+      "words": 397,
+      "bytes": 2992,
+      "sha256": "32c68322f71a974bbca75a2595343108969ddd07cdaf765a435923750d2fe660"
+    },
+    {
+      "file": "references/planning.md",
+      "words": 201,
+      "bytes": 1420,
+      "sha256": "e12aa1bd9bf0d623266ad6b34bf2cb29374f5b143ecf1e1bb95e98f7bb2b3c3d"
+    },
+    {
+      "file": "references/review-policy.md",
+      "words": 451,
+      "bytes": 3031,
+      "sha256": "4255f0e150d88a9cd487e395f327b5b176ee00864dc6a81d73759df314a539b8"
+    },
+    {
+      "file": "references/specification.md",
+      "words": 192,
+      "bytes": 1388,
+      "sha256": "d81ead83494537432b3fb6257e7112a10952cfc5fbf23d862f1b7bce4ccd18ad"
+    },
+    {
+      "file": "SKILL.md",
+      "words": 463,
+      "bytes": 3418,
+      "sha256": "e13dc853e108ab7ee2c7a566936b160fd7bed8f157b8d39bc5d2a61e7366260e"
+    },
+    {
+      "file": "SOURCES.md",
+      "words": 337,
+      "bytes": 2963,
+      "sha256": "ed2f833afff130f10849303e20d5912997665f6bafe9c5924d3a3b143ea4345f"
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.md",
+      "words": 576,
+      "bytes": 3811,
+      "sha256": "40f8875792e5f6293758b9091a7b1fafaf6a953b14deb7b278eab1009fef6b63"
+    }
+  ],
+  "runtime_words": 3026,
+  "local_markdown_links": [
+    {
+      "from": "methods/code-review.md",
+      "to": "../references/review-policy.md"
+    },
+    {
+      "from": "methods/receiving-code-review.md",
+      "to": "../references/review-policy.md"
+    },
+    {
+      "from": "methods/systematic-debugging.md",
+      "to": "verification-before-completion.md"
+    },
+    {
+      "from": "references/execution.md",
+      "to": "review-policy.md"
+    },
+    {
+      "from": "references/execution.md",
+      "to": "../methods/test-driven-development.md"
+    },
+    {
+      "from": "references/execution.md",
+      "to": "../methods/systematic-debugging.md"
+    },
+    {
+      "from": "references/execution.md",
+      "to": "../methods/receiving-code-review.md"
+    },
+    {
+      "from": "references/execution.md",
+      "to": "../methods/verification-before-completion.md"
+    },
+    {
+      "from": "references/planning.md",
+      "to": "review-policy.md"
+    },
+    {
+      "from": "references/review-policy.md",
+      "to": "../methods/code-review.md"
+    },
+    {
+      "from": "references/review-policy.md",
+      "to": "../methods/receiving-code-review.md"
+    },
+    {
+      "from": "references/specification.md",
+      "to": "review-policy.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "references/brainstorming.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "references/planning.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "references/specification.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "references/execution.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "references/review-policy.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "methods/verification-before-completion.md"
+    },
+    {
+      "from": "SKILL.md",
+      "to": "SOURCES.md"
+    },
+    {
+      "from": "SOURCES.md",
+      "to": "THIRD_PARTY_NOTICES.md"
+    }
+  ],
+  "broken_links": [],
+  "ui_short_description_length": 57,
+  "default_prompt_mentions_skill": true,
+  "implicit_invocation_default": true,
+  "root_independent_json_check": {
+    "pass": true,
+    "before": {
+      "ui": {
+        "title": "Delat Rocket",
+        "theme": "dark"
+      }
+    },
+    "after": {
+      "ui": {
+        "title": "Delta Rocket",
+        "theme": "dark"
+      }
+    }
+  },
+  "limits": [
+    "Not a token benchmark",
+    "Recovery probe was a scenario, not an induced tool failure",
+    "Tester contexts excluded previous audit history but used the same host instructions"
+  ]
+}

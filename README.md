@@ -49,7 +49,7 @@
 
 **From an idea to working software. Clear decisions. Coherent modules. Focused reviews.**
 
-[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)](.agents/skills/delta-rocket/SKILL.md) [![Version](https://img.shields.io/badge/Version-0.1-4a8d83?style=flat-square)](docs/design/2026-09-13-delta-rocket-spec.md) [![Module reviews](https://img.shields.io/badge/Module_reviews-max_2-f4c542?style=flat-square)](.agents/skills/delta-rocket/references/review-policy.md) [![Final reviews](https://img.shields.io/badge/Final_reviews-2-9b7bdb?style=flat-square)](.agents/skills/delta-rocket/references/review-policy.md)
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)](.agents/skills/delta-rocket/SKILL.md) [![Version](https://img.shields.io/badge/Version-0.2-4a8d83?style=flat-square)](docs/design/2026-09-13-delta-rocket-v0.2.md) [![Module reviews](https://img.shields.io/badge/Module_reviews-1-f4c542?style=flat-square)](.agents/skills/delta-rocket/references/review-policy.md) [![Final reviews](https://img.shields.io/badge/Final_reviews-2-9b7bdb?style=flat-square)](.agents/skills/delta-rocket/references/review-policy.md)
 
 **One main builder · Simple, readable code · Concise communication**
 
@@ -80,7 +80,7 @@ boundaries guide reviews, and concise updates report verified progress.
 | Ponytail | A complete design-to-verification process around the simplicity principles. | Minimal code remains tied to agreed behavior, integration contracts and acceptance criteria. |
 | Caveman | Control over work structure as well as communication. | The agent addresses review and context overhead alongside verbose narration. |
 
-These are differences in workflow design. Delta Rocket v0.1 has not demonstrated
+These are differences in workflow design. Delta Rocket has not demonstrated
 lower total token use, faster delivery or higher code quality in a comparative
 benchmark. The comparisons below refer to the specific upstream snapshots in
 [SOURCES.md](.agents/skills/delta-rocket/SOURCES.md), reviewed on September 13, 2026.
@@ -98,9 +98,9 @@ Its main changes are in execution:
 | --- | --- | --- |
 | Implementation owner | Subagent-driven development assigns a fresh implementer to each plan task. | The main agent implements and fixes all modules. |
 | Review unit | A plan task, whose size depends on decomposition. | A large functional module with a stable ID; internal checklist steps do not trigger reviews. |
-| Correction cycles | The referenced SDD skill permits up to five fix-and-scoped-re-review rounds per task after its initial assessment. | At most two total review rounds per module, including the initial assessment. |
+| Correction cycles | The referenced SDD skill permits up to five fix-and-scoped-re-review rounds per task after its initial assessment. | Exactly one review per module; the main agent fixes and verifies its findings. |
 | Planning detail | The planning skill asks for short execution steps and implementation code in the plan. | A module plan defines boundaries and dependencies; the following spec defines behavior and contracts. |
-| Final assessment | A broad final review, with a scoped re-review if its findings require fixes. | Two whole-implementation reviews, including when the first is clean. |
+| Final assessment | A broad final review, with a scoped re-review if its findings require fixes. | Two whole-implementation rounds, including when the first is clean; a technical failure of round 2 is logged and does not by itself block delivery. |
 
 Sources: [SDD execution and review rules](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/subagent-driven-development/SKILL.md)
 and [planning instructions](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/writing-plans/SKILL.md).
@@ -112,7 +112,7 @@ bounce between fresh implementers and reviewers. The intended benefit is lower
 coordination overhead while retaining explicit quality checkpoints.
 
 For example, catalog, checkout and receipts can be three modules containing
-18 small steps. Delta Rocket schedules **three to six module reviews plus two
+18 small steps. Delta Rocket schedules **three module reviews plus two
 final reviews**. The steps do not become 18 review units. Plan and spec reviews
 add two separate document assessments. Superpowers can also group work into
 three tasks; its current task-sizing guidance does not require reviewing every
@@ -196,12 +196,17 @@ Caveman's advertised token savings.
 | Module planning | Defines coherent capabilities, dependencies and completion evidence. |
 | Detailed specification | Captures interfaces, edge cases and testable requirements before implementation. |
 | Main-agent execution | Keeps implementation and corrections with one builder; a subagent may review. |
-| Bounded review rounds | Allows up to two reviews per module, then requires two final reviews. |
+| Bounded review rounds | One review per module, followed by two final rounds with a documented technical-failure fallback. |
 | Quality methods | Bundles adapted code review, feedback evaluation, systematic debugging, TDD and verification. |
 | Durable work state | Records decisions, progress, findings, checks and review counters for resumption. |
 | Concise communication | Summarizes meaningful progress while preserving complete project artifacts. |
 
 ## Workflow
+
+For small, reversible changes with a clear outcome and low risk, the agent edits
+and checks directly, without plan/spec/state documents or formal reviews. Changes
+to permissions, data integrity or public contracts use the full workflow below,
+regardless of diff size. Existing full-workflow scopes retain their recorded history.
 
 ```text
 IDEA
@@ -218,7 +223,6 @@ Detailed spec -> Spec review -> Corrections -> Align plan
   v
 For each large module:
   Build -> Test -> Review -> Fix and verify
-  Optional second review -> Fix and verify
   |
   v
 Whole-implementation review: round 1
@@ -243,8 +247,8 @@ new evidence requires a material change to the agreed design.
 | --- | --- |
 | Module plan | One review, followed by corrections. |
 | Specification | One review, followed by corrections. |
-| Each large module | One required review; a second when corrections need reassessment. |
-| Whole implementation | Exactly two rounds after all modules are complete. |
+| Each large module | Exactly one review, followed by fixes and direct verification. |
+| Whole implementation | Two rounds after all modules; technical failure of final 2 follows the ledger-and-continue rule. |
 
 Review counters survive resumed sessions, new commits and renamed or split
 modules. A new reviewer assessment of a single correction still consumes a round.
@@ -254,6 +258,14 @@ The second final review happens even when the first finds no issues. After the
 last round, the main agent applies justified corrections and runs affected checks.
 Unresolved material requirements prevent a ready verdict; reaching the review
 limit is not evidence that the software works.
+
+If the second final round fails technically, record the incident and known notes
+in the shared project ledger `docs/delta-rocket/issues.md`, then continue to
+verification and authorized delivery. Preserve existing entries and update the
+same incident on resume. Completion remains conditional on final 1 and other
+required assessments being complete, passing checks and no unresolved material
+defects. Report the missing review and ledger link; do not claim two successful
+reviews. A review reporting a defect is not a technical failure.
 
 Without available subagents, the main agent performs explicitly recorded inline
 assessments under the same budgets and discloses the lack of independent review.
@@ -299,7 +311,13 @@ docs/
   testing/                  Scenarios and validation results
 ```
 
-## Validation and v0.1 scope
+## Validation and scope
+
+Version 0.2 passed a repeated real JSON correction trial, recovery bookkeeping
+scenarios and one independent package review. The small correction used one skill
+file and zero formal reviews, compared with nine files and five inline reviews
+in the earlier trial. See the [v0.2 results](docs/testing/2026-09-13-v0.2-results.md)
+for evidence and the distinction between real edits and scenario assumptions.
 
 Version 0.1 passed structural validation and underwent two final package reviews.
 A separate agent evaluated eight simulated workflow scenarios and produced a
@@ -324,7 +342,8 @@ research and validation summary are in Polish; the behavioral trial artifacts
 are in English.
 
 - [Module plan — Polish](docs/design/2026-09-13-delta-rocket-plan.md)
-- [Specification v0.1 — Polish](docs/design/2026-09-13-delta-rocket-spec.md)
+- [Current specification v0.2 — Polish](docs/design/2026-09-13-delta-rocket-v0.2.md)
+- [Historical specification v0.1 — Polish](docs/design/2026-09-13-delta-rocket-spec.md)
 - [Deep research — Polish](docs/research/2026-09-13-delta-rocket-deep-research.md)
 - [Behavior scenarios — Polish](docs/testing/scenarios.md)
 - [Validation summary — Polish](docs/testing/2026-09-13-results.md)

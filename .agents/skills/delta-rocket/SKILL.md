@@ -12,7 +12,19 @@ they adapt Superpowers methods without invoking its execution orchestrators.
 ## Enter or resume
 
 Read project instructions, relevant code, existing decisions and saved work state.
-Reuse approved work. Read only the reference needed for the current phase:
+Reuse approved work. Choose the path before loading phase references.
+
+**Quick change:** for a small, reversible change with a known outcome and no
+material uncertainty, edit directly, run the relevant check, inspect the result
+and report it. Examples include a text correction, formatting or a harmless
+configuration value. No plan/spec/state artifacts or formal reviews are required;
+this entrypoint is sufficient unless a failure needs a method reference.
+Changes to permissions, data integrity, public contracts or similarly consequential
+behavior use the full workflow regardless of diff size. If risk or uncertainty
+emerges, move to that workflow. A correction inside an existing full-workflow scope
+resumes its state; it does not become a new quick scope to escape its budget.
+
+**Full workflow:** read only the reference needed for the current phase:
 
 | Phase | Read when entering | Exit |
 |---|---|---|
@@ -20,22 +32,22 @@ Reuse approved work. Read only the reference needed for the current phase:
 | Plan | [planning](references/planning.md) | Module plan reviewed and corrected |
 | Specify | [specification](references/specification.md) | Spec reviewed; plan aligned; design accepted |
 | Execute | [execution](references/execution.md) | All modules built, checked and reviewed |
-| Final review | [review policy](references/review-policy.md) | Two whole-implementation rounds and fixes completed |
+| Final review | [review policy](references/review-policy.md) | Two final rounds handled; technical failure of final 2 recorded if applicable |
 | Finish | [verification](methods/verification-before-completion.md) | Evidence supports completion |
 
 Read review policy before the first review. Keep a small work record in
 `docs/delta-rocket/<scope-id>/`: `plan.md`, `spec.md`, `state.md`. Use existing
-project locations when appropriate. For a small change, sections in one work
-note can hold these artifacts; phase order and review budgets remain the same.
+project locations when appropriate. Compact full-workflow scopes may keep these
+artifacts as sections in one note.
 Resume from evidence, not from a fresh workflow. Earlier user approval counts.
 
 ## Invariants
 
 - Plan large functional modules with stable IDs. The main agent builds and fixes
   them; small checklist steps never become independent review units.
-- One plan review, one spec review, **one required and at most two reviews per
-  large module**, then **exactly two final whole-implementation reviews**.
-  Review policy defines counting, recovery and exhausted budgets.
+- For the full workflow: one plan review, one spec review, **exactly one review
+  per large module**, then **two final whole-implementation rounds**.
+  Review policy defines counting and continuation after a technical final-2 failure.
 - Use reviewers for bounded assessments, not implementation. A reviewer cannot
   add rounds, change scope or authorize release. Use actual host tools and
   inherited model settings; no particular model or agent API is required.
