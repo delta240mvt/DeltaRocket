@@ -99,7 +99,16 @@ regardless of size. Work already in progress keeps its saved decisions and revie
 
 For the full workflow, the review budget is **one plan review, one specification
 review, one review per large module, and two final reviews of the whole change**.
-The main agent fixes findings and runs the relevant checks.
+After the plan and specification have been reviewed and corrected, the agent
+pauses once before implementation. It asks whether to start and reminds you that
+you can switch models—for example, plan with Astra and implement with Luna.
+You choose the model; the skill does not switch it automatically.
+
+After your approval, the agent works through the entire plan, fixes findings,
+completes the required reviews and runs the final checks. It does not stop after
+each module to ask whether to continue. A genuine blocker or your request to
+pause can still interrupt work. Resuming or changing models preserves progress
+and the approval already given.
 
 If the second final review fails technically, the agent records the failure and
 known notes in the shared project file `docs/delta-rocket/issues.md`, then continues.

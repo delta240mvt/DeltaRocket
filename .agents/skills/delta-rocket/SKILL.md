@@ -30,7 +30,7 @@ resumes its state; it does not become a new quick scope to escape its budget.
 |---|---|---|
 | Brainstorm | [brainstorming](references/brainstorming.md) | Material design decisions resolved |
 | Plan | [planning](references/planning.md) | Module plan reviewed and corrected |
-| Specify | [specification](references/specification.md) | Spec reviewed; plan aligned; design accepted |
+| Specify | [specification](references/specification.md) | Spec reviewed; plan aligned; implementation checkpoint confirmed |
 | Execute | [execution](references/execution.md) | All modules built, checked and reviewed |
 | Final review | [review policy](references/review-policy.md) | Two final rounds handled; technical failure of final 2 recorded if applicable |
 | Finish | [verification](methods/verification-before-completion.md) | Evidence supports completion |
@@ -39,7 +39,18 @@ Read review policy before the first review. Keep a small work record in
 `docs/delta-rocket/<scope-id>/`: `plan.md`, `spec.md`, `state.md`. Use existing
 project locations when appropriate. Compact full-workflow scopes may keep these
 artifacts as sections in one note.
-Resume from evidence, not from a fresh workflow. Earlier user approval counts.
+Resume from evidence, not from a fresh workflow. Reuse earlier design decisions.
+For the full workflow, after plan and spec reviews and their corrections, stop
+once before implementation. Show the reviewed artifacts, ask whether to start,
+and remind the user they can switch models now (for example, Astra for planning
+and Luna for implementation). Wait for an explicit answer; do not switch models
+on their behalf. Record approval and reuse it on resume or a model change.
+See [specification](references/specification.md) for this checkpoint.
+
+After approval, continue through the entire accepted plan, required reviews,
+corrections and final verification. A finished module is a progress milestone,
+not a reason to end the task or ask whether to continue. Stop only for completion,
+a user pause, or a genuine blocker that prevents further authorized progress.
 
 ## Invariants
 

@@ -11,7 +11,9 @@ Reuse still-valid evidence; changes invalidate checks for affected behavior.
 
 For final completion, confirm:
 
-- Approved behavior and module contracts are satisfied.
+- Every item in the accepted plan is complete; approved behavior and module
+  contracts are satisfied. Unfinished work is a blocker or an explicit user-approved
+  scope change, not an implicit deferral.
 - Required reviews occurred with preserved counters and scope coverage, or
   [review policy](../references/review-policy.md)'s documented final-2 technical
   failure exception applies. Quick changes require no formal reviews.

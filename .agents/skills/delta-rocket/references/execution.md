@@ -5,6 +5,20 @@ Recover review history before dispatching any reviewer. Keep the main agent as
 the implementer and integrator; do not redirect to subagent-driven-development
 or delegate each checklist step.
 
+Before implementation, confirm that the specification phase's implementation
+checkpoint has explicit approval for this scope. If it is pending, present that
+checkpoint and wait. A model change preserves the approved plan, specification,
+work state and review counters; it does not start a new workflow.
+
+Once approved, keep working until every planned module, required review,
+justified correction and final check is complete. Do not end a turn merely
+because one module or batch is done, or offer to do the remaining plan later.
+Send brief progress updates and proceed to the next action without routine
+continuation questions. Stop for a user pause, a necessary new scope/permission
+decision, or a genuine blocker only when no useful authorized work can continue.
+Record any remaining work and precise blocker; do not report partial work as
+full completion. Context compaction or a resumed session continues the same plan.
+
 Before the first edit, record the scope's starting revision when available,
 file inventory and relevant staged, unstaged and untracked state. Preserve
 the relevant pre-existing dirty/untracked contents in a recoverable local
@@ -37,7 +51,8 @@ the last corrections, use [verification](../methods/verification-before-completi
 ## Durable work state
 
 Update `state.md` at phase/module boundaries and before each review dispatch.
-Record scope ID and accepted decisions; phase and next action; module statuses;
+Record scope ID and accepted decisions; implementation checkpoint status and
+approval evidence; phase and next action; module statuses;
 plan/spec/module/final review attempts and completed assessments separately;
 reviewed revision or file snapshot;
 review report references; finding dispositions; verification commands/results.
