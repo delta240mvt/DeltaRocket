@@ -118,25 +118,48 @@ A review that finds a real bug still requires a fix.
 
 ## Project records
 
-New planned features use dated folders, such as
-`docs/delta-rocket/2026-09-19-csv-import/`, containing `plan.md`, `spec.md` and
-`state.md`. The date marks when that scope started. Resuming work keeps the same
-folder; modules within one plan share it. Older folders remain in place.
+Each new feature with its own plan gets a folder with a start date and a clear
+name. For example:
 
-A separate `docs/delta-rocket/state.md` keeps a short chronological history of
-completed scopes. After the second final review, corrections and checks, the
-agent adds a dated note about what was delivered, with links to the scope records.
-A permitted technical failure of final review 2 is clearly marked and linked to
-`issues.md`. Resuming work updates the same entry instead of duplicating it.
-Small changes on the quick path do not require these documents.
+```text
+docs/delta-rocket/
+  2026-09-19-csv-import/
+    plan.md     What to build and in what order
+    spec.md     How it should work
+    state.md    What is done and what to do next
+  state.md      A short history of finished work across the project
+  issues.md     Notes about missing final reviews, when needed
+```
+
+Modules that belong to the same plan share one folder. A separately planned
+module gets its own dated folder. Continuing work tomorrow or changing models
+keeps the same folder. Existing folders are not renamed.
+
+After the whole plan, both final reviews, fixes and checks are done, the agent
+adds a few lines to the shared `state.md`: the finish date, what was built, and
+links to its documents. This lets you follow the project's progress in one place.
+The finish date can differ from the folder's start date.
+
+If the second final review has a technical failure and the completion rules above
+are met, the history clearly notes the missing review and links to `issues.md`.
+It never says that a failed review passed. Resuming the same work updates its
+entry instead of adding a duplicate. Small changes still need no such documents.
 
 ## Recent improvements
 
-- Added the quick path for small changes.
-- Reduced module reviews to exactly one per module.
-- Added the shared issue log and continuation rule for a technical failure of final review 2.
-- Added optional Codex hooks for automatic workflow selection.
-- Standardized the display name as **DeltaRocket**. The technical identifier remains `$delta-rocket`.
+- **A chance to change models.** After the plan and specification are reviewed,
+  the agent asks before starting to build. You can plan with Astra, switch to
+  Luna, and then give the go-ahead.
+- **Finish the whole plan.** After your approval, the agent keeps going through
+  all modules, reviews and checks, unless blocked or asked to pause.
+- **Dated folders.** New planned work gets a date and a name, so it is easy to find later.
+- **One project history.** Finished work gets a short note in the shared `state.md`.
+- **Less process for small edits.** Simple changes get an edit and a check.
+  Larger work gets one review per module and two final reviews.
+- **Recovery and automatic startup.** A failed second final review has a clear
+  logging rule. Optional Codex hooks load the workflow rules automatically.
+
+The display name is **DeltaRocket**. To call the skill directly, use `$delta-rocket`.
 
 ## Install
 
