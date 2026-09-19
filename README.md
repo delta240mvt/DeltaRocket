@@ -116,6 +116,20 @@ Completion still requires the other reviews to be finished, checks to pass, and
 no unresolved material bugs. The final report discloses the missing review.
 A review that finds a real bug still requires a fix.
 
+## Project records
+
+New planned features use dated folders, such as
+`docs/delta-rocket/2026-09-19-csv-import/`, containing `plan.md`, `spec.md` and
+`state.md`. The date marks when that scope started. Resuming work keeps the same
+folder; modules within one plan share it. Older folders remain in place.
+
+A separate `docs/delta-rocket/state.md` keeps a short chronological history of
+completed scopes. After the second final review, corrections and checks, the
+agent adds a dated note about what was delivered, with links to the scope records.
+A permitted technical failure of final review 2 is clearly marked and linked to
+`issues.md`. Resuming work updates the same entry instead of duplicating it.
+Small changes on the quick path do not require these documents.
+
 ## Recent improvements
 
 - Added the quick path for small changes.

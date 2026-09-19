@@ -50,7 +50,7 @@ the last corrections, use [verification](../methods/verification-before-completi
 
 ## Durable work state
 
-Update `state.md` at phase/module boundaries and before each review dispatch.
+Update the scope-local `state.md` at phase/module boundaries and before each review dispatch.
 Record scope ID and accepted decisions; implementation checkpoint status and
 approval evidence; phase and next action; module statuses;
 plan/spec/module/final review attempts and completed assessments separately;
@@ -65,3 +65,39 @@ On resume, compare the state with the working tree and recorded reviews. Recover
 missing information from evidence. A missing or compacted history is not zero
 reviews; if the remaining budget cannot be established, do not start a new
 review until it is resolved. Continue useful implementation or diagnosis.
+
+## Project completion history
+
+Keep one chronological project history at `docs/delta-rocket/state.md`, separate
+from `<dated-scope>/state.md`. The local file tracks active work; the shared file
+briefly records delivered outcomes across all scopes. If an existing shared
+`state.md` has other content, preserve it and use a dedicated completion-history
+section. Follow an explicitly established alternative documentation root
+consistently; do not create a second competing history.
+
+Append one entry after the whole scope has completed final review 2, all justified
+corrections and final verification. Do not append completion entries after each
+module or while final review is still running. If final 2 fails technically and
+review policy permits completion, use an explicit "Completed with final-2 review
+gap" status and link the incident in the project-wide issues ledger; never claim
+the missing assessment passed. Blocked work stays in the scope's working state.
+
+Each entry contains the completion date in the user's local timezone, stable
+scope ID, a short description of what was delivered (mention modules where useful),
+and relative links to the scope's plan, specification and working state. Keep it
+to a few lines; reference detailed review/test evidence instead of copying logs.
+Use the completion date here, even if it differs from the directory's start date.
+For example (illustrative only):
+
+```markdown
+### 2026-09-19 — CSV import
+Scope: 2026-09-17-csv-import. Completed.
+Added CSV preview, row validation and confirmed import. Both final reviews and checks completed.
+[Plan](2026-09-17-csv-import/plan.md) · [Spec](2026-09-17-csv-import/spec.md) · [State](2026-09-17-csv-import/state.md)
+```
+
+Preserve earlier entries and append at the end. On resume, look up the stable
+scope ID and reconcile its existing entry rather than appending a duplicate.
+Correct inaccurate or reopened completion status in that entry; a genuinely new
+scope gets a new entry. Do not backfill old work without evidence. A quick change
+still requires no workflow documents or completion-history entry.

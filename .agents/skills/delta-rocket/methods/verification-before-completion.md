@@ -19,6 +19,10 @@ For final completion, confirm:
   failure exception applies. Quick changes require no formal reviews.
 - Justified review corrections are implemented and their checks pass.
 - No material unresolved findings are hidden by a consumed review budget.
+- For a completed full-workflow scope, append or reconcile its brief entry in
+  the project-wide `docs/delta-rocket/state.md` as described in
+  [execution](../references/execution.md). Link its scope records and disclose any
+  final-2 review gap. Do not claim documentation is complete if this write fails.
 - The final summary describes the actual scope and verification limitations.
 
 After fixes from the second final review, run affected tests or concrete

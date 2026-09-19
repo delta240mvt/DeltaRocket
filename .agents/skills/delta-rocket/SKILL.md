@@ -35,10 +35,17 @@ resumes its state; it does not become a new quick scope to escape its budget.
 | Final review | [review policy](references/review-policy.md) | Two final rounds handled; technical failure of final 2 recorded if applicable |
 | Finish | [verification](methods/verification-before-completion.md) | Evidence supports completion |
 
-Read review policy before the first review. Keep a small work record in
-`docs/delta-rocket/<scope-id>/`: `plan.md`, `spec.md`, `state.md`. Use existing
-project locations when appropriate. Compact full-workflow scopes may keep these
-artifacts as sections in one note.
+Read review policy before the first review. For each new full-workflow scope,
+keep `plan.md`, `spec.md` and `state.md` in
+`docs/delta-rocket/YYYY-MM-DD-<scope-name>/`, using its start date in the user's
+local timezone. A separately planned feature or module is a scope; modules within
+one plan share its directory. Preserve existing scope paths on resume.
+Existing project documentation locations may be used, but new scope directory
+names still include the date. Compact scopes may keep the three artifacts as
+sections in one note inside that dated directory.
+After the full workflow finishes, append one short completion entry to the
+project-wide `docs/delta-rocket/state.md`; see [execution](references/execution.md).
+This project history is separate from each scope's working state.
 Resume from evidence, not from a fresh workflow. Reuse earlier design decisions.
 For the full workflow, after plan and spec reviews and their corrections, stop
 once before implementation. Show the reviewed artifacts, ask whether to start,

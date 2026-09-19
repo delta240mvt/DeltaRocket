@@ -1,6 +1,15 @@
 # Plan the modules
 
 Describe how to deliver the agreed outcome before writing the detailed spec.
+Before writing a new scope's documents, choose a stable directory named
+`YYYY-MM-DD-<scope-name>` under `docs/delta-rocket/` (or the established project
+documentation root). Use the scope's start date in the user's local timezone and
+a short descriptive name. If a genuinely separate scope has the same date and
+name, add `-02`, `-03`, etc.; never overwrite an existing scope. A new session,
+model, date, correction or renamed module does not create a new scope directory.
+Resume existing scopes at their original paths, including older undated ones.
+Modules within one plan share its documents; a module with its own independent
+plan, specification and execution gets its own dated scope directory.
 A large module delivers a coherent capability that can be checked and reviewed
 as a whole. Group setup, storage, UI and tests when they serve that capability.
 Size by responsibility and coupling, not minutes, file count or token count.
