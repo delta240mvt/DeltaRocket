@@ -1,0 +1,65 @@
+{
+  "claude_code_version": "2.1.132",
+  "python_version": "3.10.11",
+  "platform": "Windows",
+  "shells_tested": [
+    "Git Bash",
+    "PowerShell"
+  ],
+  "cli_hooks": [
+    {
+      "event": "SessionStart",
+      "exit_code": 0,
+      "outcome": "success",
+      "json_output_valid": true
+    },
+    {
+      "event": "UserPromptSubmit",
+      "exit_code": 0,
+      "outcome": "success",
+      "json_output_valid": true
+    }
+  ],
+  "cli_exit": 1,
+  "model_test": "Blocked by external OAuth token expiry (401); no model response or behavioral-compliance claim. No tools enabled, isolated settings/cwd, inherited user model, no production edits.",
+  "test_command": "python -m unittest discover -s tests -v",
+  "test_results": "9 tests passed",
+  "m1_correction": "Host installation preferred for explicit Claude adapter; Codex source behavior unchanged.",
+  "final_1_correction": "Preserve unrelated originally empty hook groups; repeat-install regression failed before fix and passed after it; full nine-test suite passed.",
+  "deployment": {
+    "hosts": [
+      "Codex",
+      "Claude Code"
+    ],
+    "matching_skill_files_per_host": 15,
+    "matching_hooks": true,
+    "unrelated_claude_settings_preserved": true,
+    "codex_hooks_and_trust_unchanged": true,
+    "installed_hook_commands": [
+      {
+        "host": "codex",
+        "event": "SessionStart",
+        "exit_code": 0,
+        "json_valid": true
+      },
+      {
+        "host": "codex",
+        "event": "UserPromptSubmit",
+        "exit_code": 0,
+        "json_valid": true
+      },
+      {
+        "host": "claude-code",
+        "event": "SessionStart",
+        "exit_code": 0,
+        "json_valid": true
+      },
+      {
+        "host": "claude-code",
+        "event": "UserPromptSubmit",
+        "exit_code": 0,
+        "json_valid": true
+      }
+    ]
+  }
+}

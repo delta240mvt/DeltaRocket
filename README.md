@@ -49,7 +49,7 @@
 
 **One workflow to plan, build and check your software.**
 
-[![Codex Skill](https://img.shields.io/badge/Codex-Skill-111111?style=flat-square)](.agents/skills/delta-rocket/SKILL.md) [![Version](https://img.shields.io/badge/Version-0.2-4a8d83?style=flat-square)](docs/design/2026-09-13-delta-rocket-v0.2.md)
+[![Codex + Claude Code](https://img.shields.io/badge/Codex_+_Claude_Code-Skill-111111?style=flat-square)](.agents/skills/delta-rocket/SKILL.md) [![Version](https://img.shields.io/badge/Version-0.3-4a8d83?style=flat-square)](docs/delta-rocket/2026-10-04-claude-code-support/spec.md)
 
 [Why DeltaRocket](#why-deltarocket) · [How it works](#how-it-works) · [Install](#install) · [Documentation](#documentation)
 
@@ -57,7 +57,7 @@
 
 ## Why DeltaRocket
 
-DeltaRocket is a Codex skill for building software. It combines three useful ideas:
+DeltaRocket is a skill for building software in **Codex and Claude Code**. It combines three useful ideas:
 **plan before building** from Superpowers, **keep the solution simple** from
 Ponytail, and **keep updates short** from Caveman.
 
@@ -101,7 +101,8 @@ For the full workflow, the review budget is **one plan review, one specification
 review, one review per large module, and two final reviews of the whole change**.
 After the plan and specification have been reviewed and corrected, the agent
 pauses once before implementation. It asks whether to start and reminds you that
-you can switch models—for example, plan with Astra and implement with Luna.
+you can switch models. In Codex, use its model selector (for example, Astra to
+Luna). In Claude Code, use `/model` to choose an available Claude model.
 You choose the model; the skill does not switch it automatically.
 
 After your approval, the agent works through the entire plan, fixes findings,
@@ -149,7 +150,7 @@ entry instead of adding a duplicate. Small changes still need no such documents.
 
 - **A chance to change models.** After the plan and specification are reviewed,
   the agent asks before starting to build. You can plan with Astra, switch to
-  Luna, and then give the go-ahead.
+  Luna in Codex, or choose a different Claude model with `/model`, then give the go-ahead.
 - **Finish the whole plan.** After your approval, the agent keeps going through
   all modules, reviews and checks, unless blocked or asked to pause.
 - **Dated folders.** New planned work gets a date and a name, so it is easy to find later.
@@ -157,48 +158,80 @@ entry instead of adding a duplicate. Small changes still need no such documents.
 - **Less process for small edits.** Simple changes get an edit and a check.
   Larger work gets one review per module and two final reviews.
 - **Recovery and automatic startup.** A failed second final review has a clear
-  logging rule. Optional Codex hooks load the workflow rules automatically.
+  logging rule. Optional hooks load the workflow rules in Codex and Claude Code.
 
-The display name is **DeltaRocket**. To call the skill directly, use `$delta-rocket`.
+- **Two supported hosts.** The same skill, project records and review rules work
+  in Codex and Claude Code. Each has its own installer and hook settings.
+
+The display name is **DeltaRocket**. Invoke it with `$delta-rocket` in Codex or
+`/delta-rocket` in Claude Code.
 
 ## Install
 
-### Use in this repository
+Clone the repository and choose the installer for your host. Python 3 is required.
 
 ```bash
 git clone https://github.com/delta240mvt/DeltaRocket.git
 cd DeltaRocket
 ```
 
-Open the directory in Codex, then ask:
+| Host | Install for all your projects | Invoke explicitly |
+| --- | --- | --- |
+| Codex | `python scripts/install-codex.py` | `$delta-rocket` |
+| Claude Code | `python scripts/install-claude-code.py` | `/delta-rocket` |
+
+Run both installers if you use both hosts. They copy the same complete skill
+and add two hooks: one loads the rules at session start, the other adds a short
+reminder with each user message. Both help the agent choose quick changes or the
+full workflow. Questions and standalone reviews stay simple.
+
+Existing settings are backed up. Other hooks, plugins, models and permissions
+are preserved. Run the same installer again after `git pull` to update.
+
+### Codex
+
+The personal install uses `CODEX_HOME` (default `~/.codex`). Restart Codex,
+open `/hooks`, and review and trust the two DeltaRocket entries.
+[Untrusted hooks do not run](https://learn.chatgpt.com/docs/hooks).
 
 ```text
 $delta-rocket Build a CSV import dashboard with a preview and error handling.
 ```
 
-To use it in another project, copy the entire
-[delta-rocket folder](.agents/skills/delta-rocket) into that project's `.agents/skills/`.
-Restart Codex if the skill does not appear.
+This repository already has the project skill in `.agents/skills/delta-rocket`.
+You can copy that whole folder to another project's `.agents/skills/` if you
+prefer project-only use without global hooks.
 
-### Install for all projects, with automatic routing
+### Claude Code
 
-With Python 3 available as `python`, run from this repository:
+The personal install uses `CLAUDE_CONFIG_DIR` (default `~/.claude`): the skill
+lives in `skills/delta-rocket`, and hooks are added to `settings.json`.
+Restart Claude Code and inspect `/hooks`.
 
-```bash
-python scripts/install-codex.py
+```text
+/delta-rocket Build a CSV import dashboard with a preview and error handling.
 ```
 
-The installer copies the skill and hook into `CODEX_HOME` (default: `~/.codex`).
-It backs up existing hook settings, preserves other hooks, and can be run again
-without adding duplicate DeltaRocket entries.
+For project-only use, copy the whole `.agents/skills/delta-rocket` folder to
+`.claude/skills/delta-rocket` in your project. The
+[Claude Code skills documentation](https://code.claude.com/docs/en/skills)
+explains personal and project skills. Global installation is local to your
+computer; it does not upload the skill to Claude's cloud services.
 
-Restart Codex, open `/hooks`, and review and trust the two DeltaRocket entries.
-[Untrusted hooks do not run](https://learn.chatgpt.com/docs/hooks).
+On Windows, the default installer uses Git Bash. If you use PowerShell for
+Claude hooks instead, run `python scripts/install-claude-code.py --shell powershell`.
+The installed Python interpreter is used, so keep it available after installation.
+Hook shell selection is described in the
+[Claude Code hooks documentation](https://code.claude.com/docs/en/hooks).
 
-The session hook loads the workflow rules; the message hook adds a short reminder
-to choose the right path. An explicit request to use another workflow takes priority.
-These hooks guide the agent; they do not enforce its decisions. The installer
-does not disable other workflow hooks, so review those separately if they conflict.
+### What the hooks do
+
+Hooks add instructions; they do not technically block edits or enforce completion.
+The agent still asks before implementation after plan and spec reviews, and you
+can change the model then. An explicit choice of another workflow takes priority.
+No hook is installed for reviewer subagents or to force the agent to keep talking.
+Disabled hooks, managed settings or other competing workflow plugins can affect
+activation. Inspect your host's hooks and policies rather than bypassing them.
 
 ## Validation
 
@@ -207,15 +240,23 @@ with nine files and five inline reviews in the earlier trial. Recovery scenarios
 and an independent package review also passed. See the
 [v0.2 results](docs/testing/2026-09-13-v0.2-results.md) for the evidence and limitations.
 
-Hook and installer tests cover repeated installation, preservation of other hooks,
-and context output. Run them with `python -m unittest discover -s tests -v`.
+Hook and installer tests cover both hosts, repeated installation, preservation
+of other settings and hooks, host isolation, context output and paths with spaces
+or special characters. Run them with `python -m unittest discover -s tests -v`.
 These checks are not a benchmark of delivery speed, token savings or code quality.
+
+For v0.3, both hooks also ran successfully in installed Claude Code 2.1.132.
+The model-response smoke test could not finish because the local Claude OAuth
+token had expired. A complete Claude-driven build has not been verified. See the
+[host support checks](docs/delta-rocket/2026-10-04-claude-code-support/verification.json).
 
 ## Documentation
 
 - [Skill instructions](.agents/skills/delta-rocket/SKILL.md)
 - [Full review policy](.agents/skills/delta-rocket/references/review-policy.md)
-- [Current specification — Polish](docs/design/2026-09-13-delta-rocket-v0.2.md)
+- [Codex and Claude Code guidance](.agents/skills/delta-rocket/references/hosts.md)
+- [Claude Code support specification](docs/delta-rocket/2026-10-04-claude-code-support/spec.md)
+- [Workflow specification v0.2 — Polish](docs/design/2026-09-13-delta-rocket-v0.2.md)
 - [Research and design rationale — Polish](docs/research/2026-09-13-delta-rocket-deep-research.md)
 
 ## Credits

@@ -1,6 +1,6 @@
 # Sources and adaptation boundaries
 
-DeltaRocket v0.2, revised 2026-09-13. This file documents provenance; it is
+DeltaRocket v0.3, revised 2026-10-04. This file documents provenance; it is
 not a runtime phase and need not be loaded for ordinary execution.
 
 The user's approved workflow is the source for sequencing, Socratic decisions,
@@ -31,6 +31,19 @@ MIT notices for adapted upstream material travel with this folder in
   SKILL.md, progressive disclosure, project discovery and UI metadata.
 - [OpenAI: Rethinking skills and prompts for GPT-6 Astra](https://learn.chatgpt.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra):
   concise routing, proportional process and avoiding redundant instruction layers.
+
+- [Anthropic: Claude Code skills](https://code.claude.com/docs/en/skills):
+  personal/project discovery, slash invocation and portable SKILL.md resources.
+- [Anthropic: Claude Code hooks](https://code.claude.com/docs/en/hooks):
+  SessionStart/UserPromptSubmit input and additionalContext output, shell commands.
+- [Anthropic: Claude Code settings](https://code.claude.com/docs/en/settings):
+  settings.json and CLAUDE_CONFIG_DIR.
+- [Anthropic: Claude Code model configuration](https://code.claude.com/docs/en/model-config):
+  user-controlled /model selection.
+- [Anthropic: Claude Code subagents](https://code.claude.com/docs/en/sub-agents):
+  available Agent tools and host model/permission behavior.
+Claude Code sources checked 2026-10-04. Newer documentation alone does not prove
+compatibility with older installations; see the host support validation report.
 
 Consult the current host for model availability and tool contracts. These
 instructions intentionally do not pin a model, reasoning level, agent API,

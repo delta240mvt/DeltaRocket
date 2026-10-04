@@ -6,6 +6,8 @@ description: Use when designing and building a software feature or project throu
 # DeltaRocket
 
 Build agreed behavior with simple, readable code and concise communication.
+This skill works in Codex and Claude Code. For invocation, model selection or
+reviewer-tool differences, read [host guidance](references/hosts.md) when needed.
 The main agent owns implementation. Use these self-contained phase instructions;
 they adapt Superpowers methods without invoking its execution orchestrators.
 
@@ -49,8 +51,8 @@ This project history is separate from each scope's working state.
 Resume from evidence, not from a fresh workflow. Reuse earlier design decisions.
 For the full workflow, after plan and spec reviews and their corrections, stop
 once before implementation. Show the reviewed artifacts, ask whether to start,
-and remind the user they can switch models now (for example, Astra for planning
-and Luna for implementation). Wait for an explicit answer; do not switch models
+and remind the user they can switch to an available implementation model now.
+Use the host model selector in Codex or `/model` in Claude Code; see host guidance. Wait for an explicit answer; do not switch models
 on their behalf. Record approval and reuse it on resume or a model change.
 See [specification](references/specification.md) for this checkpoint.
 

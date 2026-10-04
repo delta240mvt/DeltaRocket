@@ -30,9 +30,11 @@ After both document reviews, corrections and plan alignment, pause before any
 implementation. This is one checkpoint after both reviews, not one after each.
 Present a short summary with links to the reviewed plan and specification, and
 ask in the user's language: "The plan and specification are reviewed. You can
-switch the implementation model now, for example from Astra to Luna. Shall I
+switch the implementation model now. Shall I
 start implementing the full plan?"
 
+Explain how to switch in the current host using [host guidance](hosts.md): the
+Codex model selector or Claude Code `/model`. Offer only models available there.
 This checkpoint gives the user the requested chance to change models. Earlier
 brainstorming or design acceptance alone does not satisfy it. Wait for an
 explicit answer; elapsed time and a model change alone are not approval.
